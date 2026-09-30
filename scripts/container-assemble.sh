@@ -8,19 +8,22 @@ test -s /in/mu300-update
 test -s /in/kernel.release
 mkdir -p /tmp /var/lock
 
-# APK scripts operate on an offline image root; rc.common start is suppressed
-# by the standard OpenWrt IPKG_INSTROOT contract. Public keys are a read-only
-# temporary verification directory, never copied into the persistent trust store.
-export IPKG_INSTROOT=/
-export PKG_UPGRADE=1
+# APK otherwise discards IPKG_INSTROOT before execve of package scripts.
+# Keep its native script ordering and pass only this offline-image environment.
+apk_image() {
+    env -i PATH=/usr/sbin:/usr/bin:/sbin:/bin LC_ALL=C IPKG_INSTROOT=/ \
+        apk --preserve-env --keys-dir /in/keys \
+        --repositories-file /in/repositories.list --no-network "$@"
+}
+
 for package in /in/apks/*.apk; do
     test -f "$package" || continue
-    apk --keys-dir /in/keys --repositories-file /in/repositories.list --no-network verify "$package"
+    apk_image verify "$package"
 done
-apk --keys-dir /in/keys --repositories-file /in/repositories.list --no-network update
+apk_image update
 while IFS= read -r package; do
     test -n "$package" || continue
-    apk --keys-dir /in/keys --repositories-file /dev/null --no-network del "$package"
+    apk_image del "$package"
 done < /in/remove-packages.txt
 set --
 for package in /in/apks/*.apk; do
@@ -31,14 +34,14 @@ while IFS= read -r package; do
     test -n "$package" || continue
     set -- "$@" "$package"
 done < /in/official-packages.txt
-apk --keys-dir /in/keys --repositories-file /in/repositories.list --no-network add --simulate "$@"
-apk --keys-dir /in/keys --repositories-file /in/repositories.list --no-network add "$@"
+apk_image add --simulate "$@"
+apk_image add "$@"
 while IFS="$(printf '\t')" read -r package version; do
-    apk info --exists "$package=$version"
+    apk_image info --exists "$package=$version"
 done < /in/expected-packages.tsv
 while IFS= read -r package; do
     test -n "$package" || continue
-    if apk info --exists "$package"; then
+    if apk_image info --exists "$package"; then
         echo "Excluded package remains installed: $package" >&2
         exit 1
     fi
@@ -52,6 +55,10 @@ while IFS="$(printf '\t')" read -r key expected; do
 done < /in/expected-defaults.tsv
 cp /in/expected-defaults.tsv /out/service-defaults.tsv
 find /etc/rc.d -type l | sort > /out/boot-service-links.txt
+for script in luci-openclash luci-homeproxy luci-homeproxy-migration luci-easytier; do
+    test -s "/etc/uci-defaults/$script"
+done
+find /etc/uci-defaults -type f | sort > /out/deferred-uci-defaults.txt
 
 kernel_release=$(cat /in/kernel.release)
 mkdir -p "/lib/modules/$kernel_release"
@@ -64,7 +71,7 @@ printf '%s\n' "$F50_IMAGE_TAG" > /etc/mu300/image-version
 uci set luci.main.lang=zh_cn
 uci set luci.main.mediaurlbase=/luci-static/aurora
 uci commit luci
-apk info -v | sort > /out/installed-packages.txt
+apk_image info -v | sort > /out/installed-packages.txt
 
 # Copy excluding host bind mounts and runtime trees. Restore generic resolver
 # and host records explicitly; never ship Docker's host/container identities.

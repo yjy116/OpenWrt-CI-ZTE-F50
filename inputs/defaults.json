@@ -6,6 +6,8 @@
     "openclash.config.enable": "0",
     "autoreboot.@schedule[0].enabled": "0",
     "vlmcsd.config.enabled": "0",
+    "vlmcsd.config.auto_activate": "0",
+    "vlmcsd.config.internet_access": "0",
     "easytier.@easytier[0].enabled": "0",
     "homeproxy.config.main_node": "nil",
     "homeproxy.server.enabled": "0",

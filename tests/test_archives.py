@@ -18,6 +18,11 @@ def make_archive(path, files):
             archive.addfile(entry, io.BytesIO(payload))
 
 
+def make_rootfs(path, files):
+    baseline = {'./bin/busybox': b'executable', './etc/openwrt_release': b'OpenWrt'}
+    make_archive(path, {**baseline, **files})
+
+
 class ArchiveTests(unittest.TestCase):
     def model(self):
         path = ROOT / 'scripts/archive_checks.py'
@@ -48,10 +53,11 @@ class ArchiveTests(unittest.TestCase):
         model = self.model()
         for name in ('../escape', '/absolute', './etc/dropbear/dropbear_rsa_host_key',
                      './var/lib/zerotier-one/identity.secret', './etc/tailscale/tailscaled.state',
+                     './etc/easytier/et_machine_id', './etc/daed/wing.db', './etc/daed/wing.db-wal',
                      './opt/mu300/android/vendor/lib64/private.so'):
             with self.subTest(name=name), tempfile.TemporaryDirectory() as directory:
                 path = Path(directory) / 'rootfs.tar.gz'
-                make_archive(path, {name: b'test'})
+                make_rootfs(path, {name: b'test'})
                 with self.assertRaises(ValueError):
                     model.audit_rootfs(path)
 
@@ -61,7 +67,7 @@ class ArchiveTests(unittest.TestCase):
                               ('etc/shadow', b'root:$6$privatehash:0:0:0:0:::\n')]:
             with self.subTest(name=name), tempfile.TemporaryDirectory() as directory:
                 path = Path(directory) / 'rootfs.tar.gz'
-                make_archive(path, {name: payload})
+                make_rootfs(path, {name: payload})
                 with self.assertRaises(ValueError):
                     model.audit_rootfs(path)
 
@@ -70,7 +76,7 @@ class ArchiveTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'duplicate.tar.gz'
             with tarfile.open(path, 'w:gz') as archive:
-                for name in ('./etc/test', 'etc/test'):
+                for name in ('./bin/busybox', './etc/openwrt_release', './etc/test', 'etc/test'):
                     entry = tarfile.TarInfo(name)
                     archive.addfile(entry, io.BytesIO(b''))
             with self.assertRaises(ValueError):

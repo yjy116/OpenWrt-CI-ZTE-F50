@@ -88,8 +88,9 @@ python3 scripts/assemble.py --tag vYYYY.MM.DD-f50.1 \
 
 容器使用 `--network none`；仅导入已校验公开 rootfs，使用单独临时公钥目录校验
 自签 APK；官方无单包签名的 APK 则用原始签名索引先 update，再按精确版本安装。
-先运行依赖模拟，再离线安装并比较完整版本集合。标准 OpenWrt `IPKG_INSTROOT=/`
-使 default_postinst 跳过守护进程启动与 uci-defaults，后者保留到设备首启执行；服务
+先运行依赖模拟，再离线安装并比较完整版本集合。APK 通过 `env -i` 白名单及原生
+`--preserve-env` 将 `IPKG_INSTROOT=/` 传给生命周期；仅外层 export 会被 APK 丢弃。
+标准 OpenWrt default_postinst 据此跳过守护进程启动与 uci-defaults，后者保留到设备首启执行；服务
 启用链接仍按包的标准生命周期生成。脚本不传入 GH_TOKEN 或宿主秘密。
 不修改宿主和目标设备的 APK 信任库。
 
@@ -97,7 +98,7 @@ python3 scripts/assemble.py --tag vYYYY.MM.DD-f50.1 \
 vlmcsd 的公共默认配置未启用代理或计划任务；输出配置断言和启动链接清单。
 Tailscale 可以启动为未登录状态，这不等同于已建立 VPN。升级会保留设备既有配置。
 
-输出重新审计路径穿越、重复成员、私有固件、SSH/VPN 身份、账户密码哈希和非空
+输出重新审计路径穿越、重复成员、私有固件、SSH/VPN/EasyTier 身份、daed 运行数据库、账户密码哈希和非空
 配置凭据；LuCI 的 `/etc/passwd` 文件引用及 rpcd 的 `$p$root` 账户引用不会被误当
 密码。内核 bundle 校验版本、F50 标记和模块数量，发布字节与原验证输入一致。
 清单记录输入、实际包列表、产物哈希及未进行实机启动/网络验证的事实。

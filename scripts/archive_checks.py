@@ -12,6 +12,7 @@ PRIVATE_PATHS = re.compile(
     r'^etc/(ssh/ssh_host_|dropbear/dropbear_.*_host_key)|'
     r'^root/\.ssh/|^etc/mu300/(hotspot|vpn|toolkit)\.conf$|'
     r'(^|/)(identity\.(secret|public)|authtoken\.secret|tailscaled\.state)(\.|$)|'
+    r'(^|/)et_machine_id$|^etc/daed/wing\.db($|-)|'
     r'(^|/)(libmali|libOpenCL|libGLES|libEGL|libvulkan)[^/]*\.so')
 UCI_SECRET = re.compile(r"^\s*option\s+(?:password|passwd|secret|token|private_key|authkey|psk)\s+(['\"])(.+)\1\s*$", re.M)
 
