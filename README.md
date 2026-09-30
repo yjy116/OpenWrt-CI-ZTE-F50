@@ -4,7 +4,8 @@
 7.2.8-f50-dae1 内核。它复用公开上游 rootfs 与成功内核构建产物，**不是重新编译
 整套 OpenWrt**。当前锁定 96 个输入 APK，组装后的 247 个包名和版本已与设备最终
 安装清单逐项比对一致；[ARM64 云组装与产物审计已通过](https://github.com/yjy116/OpenWrt-CI-ZTE-F50/actions/runs/36703988419)。
-完整新镜像尚未刷入设备进行启动验证。
+[预览固件 v2026.09.30-f50.1](https://github.com/yjy116/OpenWrt-CI-ZTE-F50/releases/tag/v2026.09.30-f50.1)
+已发布；完整新镜像尚未刷入设备进行启动验证。
 
 设备使用 `mu300-update`/MU300 专用安装器，而不是 OpenWrt armsr 整盘 sysupgrade。
 发布协议固定为 `mu300-openwrt-rootfs.tar.gz`、`mu300-kernel-7.2.tar.gz`、
@@ -130,7 +131,7 @@ DNS/路由字段并重建自身防火墙 include；OpenClash 会补齐缺失认�
 `latest`；首次使用必须显式指定已审核的固件 tag。没有稳定版时，默认 latest
 查询会明确失败，不会自动改用构建输入归档或其它版本。
 
-未来完成发布后，现有上游升级器可通过环境变量选择本仓库的已审计 release：
+已发布的预览固件须按明确 tag 选择；以下为格式示例，执行前仍需评估实机升级：
 
 ```sh
 MU300_REPO=OWNER/REPOSITORY MU300_RELEASE=vYYYY.MM.DD-f50.1 mu300-update apply openwrt
