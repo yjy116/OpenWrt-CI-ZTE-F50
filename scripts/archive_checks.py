@@ -1,4 +1,5 @@
 """Inspect public release archives without extracting or executing their contents."""
+import hashlib
 from pathlib import PurePosixPath
 import posixpath
 import re
@@ -15,6 +16,9 @@ PRIVATE_PATHS = re.compile(
     r'(^|/)et_machine_id$|^etc/daed/wing\.db($|-)|'
     r'(^|/)(libmali|libOpenCL|libGLES|libEGL|libvulkan)[^/]*\.so')
 UCI_SECRET = re.compile(r"^\s*option\s+(?:password|passwd|secret|token|private_key|authkey|psk)\s+(['\"])(.+)\1\s*$", re.M)
+# Exact public, disabled DDNS example from the signature-verified ddns-scripts APK.
+# Any byte change restores normal credential checks; see tests/fixtures/README.txt.
+PUBLIC_EXAMPLE_CONFIGS = {'etc/config/ddns': '0a88c15ed3e4b95a96b0af0a855c00b4d4a267322f6aeccb3b8745a15e7e8c27'}
 
 
 def require(condition, message):
@@ -62,6 +66,8 @@ def members_checked(archive):
 
 
 def check_sensitive_content(name, payload):
+    if PUBLIC_EXAMPLE_CONFIGS.get(name) == hashlib.sha256(payload).hexdigest():
+        return True
     if name in {'etc/machine-id', 'var/lib/dbus/machine-id'}:
         require(not payload.strip(), 'Nonempty machine identity in release')
     if name in {'etc/shadow', 'etc/gshadow'}:
@@ -82,15 +88,17 @@ def check_sensitive_content(name, payload):
 
 def audit_rootfs(path):
     files = []
+    examples = []
     with tarfile.open(path, 'r:gz') as archive:
         for name, member in members_checked(archive):
             files.append(name)
             sensitive = name.startswith('etc/config/') or name in {'etc/shadow', 'etc/gshadow',
                         'etc/machine-id', 'var/lib/dbus/machine-id'} or name.endswith(('.key', '.pem'))
-            if member.isfile() and sensitive:
-                check_sensitive_content(name, archive.extractfile(member).read())
+            if member.isfile() and sensitive and check_sensitive_content(name, archive.extractfile(member).read()):
+                examples.append(name)
     require('bin/busybox' in files and 'etc/openwrt_release' in files, 'Not an OpenWrt root filesystem')
-    return {'files': len(files), 'private_files': False, 'device_credentials': False}
+    return {'files': len(files), 'private_files': False, 'device_credentials': False,
+            'exact_public_example_configs': examples}
 
 
 def audit_kernel(path, release):

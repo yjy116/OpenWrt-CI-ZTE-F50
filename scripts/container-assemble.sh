@@ -60,6 +60,13 @@ for script in luci-openclash luci-homeproxy luci-homeproxy-migration luci-easyti
 done
 find /etc/uci-defaults -type f | sort > /out/deferred-uci-defaults.txt
 
+for file in www/luci-static/resources/view/status/include/15_f50_thermal.js \
+            usr/share/rpcd/acl.d/luci-f50-thermal.json; do
+    mkdir -p "/$(dirname "$file")"
+    cp "/in/overlay/$file" "/$file"
+    chmod 0644 "/$file"
+done
+
 kernel_release=$(cat /in/kernel.release)
 mkdir -p "/lib/modules/$kernel_release"
 cp -a /in/modules/. "/lib/modules/$kernel_release/"

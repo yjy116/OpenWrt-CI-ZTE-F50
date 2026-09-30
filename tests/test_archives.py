@@ -103,6 +103,13 @@ class ArchiveTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             model.validate_link(member, 'link')
 
+    def test_public_ddns_example_requires_exact_original_package_bytes(self):
+        model = self.model()
+        fixture = (ROOT / 'tests/fixtures/ddns-official.config').read_bytes()
+        self.assertTrue(model.check_sensitive_content('etc/config/ddns', fixture))
+        with self.assertRaises(ValueError):
+            model.check_sensitive_content('etc/config/ddns', fixture + b'\n# changed\n')
+
 
 if __name__ == '__main__':
     unittest.main()

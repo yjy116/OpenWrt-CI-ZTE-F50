@@ -1,0 +1,15 @@
+{
+  "luci-f50-thermal": {
+    "description": "Read F50 thermal sensor types and temperatures",
+    "read": {
+      "ubus": {
+        "file": ["list", "read"]
+      },
+      "file": {
+        "/sys/class/thermal": ["list"],
+        "/sys/class/thermal/thermal_zone[0-9]*/type": ["read"],
+        "/sys/class/thermal/thermal_zone[0-9]*/temp": ["read"]
+      }
+    }
+  }
+}

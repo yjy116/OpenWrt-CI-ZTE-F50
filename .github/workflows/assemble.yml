@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Focused acceptance tests
         run: timeout 60s python3 -B -m unittest discover -s tests
+      - name: Temperature component tests
+        run: node --test tests/test_thermal.js
       - name: Assemble locked public inputs
         env:
           GH_TOKEN: ${{ github.token }}

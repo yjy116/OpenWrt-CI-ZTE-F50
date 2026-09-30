@@ -11,6 +11,7 @@ import tempfile
 from archive_checks import audit_kernel, audit_reference_kernel, audit_rootfs, clean_name, require
 from inputs import obtain, run, sha256, validate_package_lock
 from inventory import verify_installed_inventory
+from overlay import audit_overlay, stage_overlay
 from package_inputs import collect_packages
 from updater import make_updater
 
@@ -72,6 +73,7 @@ def write_container_inputs(context):
         filename = field.replace('_', '-') + '.txt'
         (inputs / filename).write_text('\n'.join(packages[field]) + '\n')
     shutil.copyfile(ROOT / 'scripts/container-assemble.sh', inputs / 'assemble.sh')
+    return stage_overlay(ROOT / 'files', inputs / 'overlay')
 
 
 def run_container(context):
@@ -96,6 +98,7 @@ def run_container(context):
 def publish(context):
     staging = context['staging']
     rootfs_audit = audit_rootfs(staging / ROOTFS_NAME)
+    overlay_audit = audit_overlay(staging / ROOTFS_NAME, context['overlay'])
     shutil.copyfile(context['base']['files']['kernel'], staging / KERNEL_NAME)
     shutil.copyfile(context['base']['files']['reference-kernel'], staging / 'mu300-kernel.tar.gz')
     shutil.copyfile(context['inputs'] / 'mu300-update', staging / 'mu300-update')
@@ -103,6 +106,7 @@ def publish(context):
                 'tag': context['options'].tag, 'repository': context['options'].repository,
                 'base': context['base']['lock'], 'packages': context['packages'],
                 'audits': dict(context['base']['audits'], output_rootfs=rootfs_audit),
+                'builtin_overlay': overlay_audit,
                 'kernel_original_bytes_preserved': sha256(staging / KERNEL_NAME) == sha256(context['base']['files']['kernel']),
                 'persistent_paths': read_json(ROOT / 'inputs/keep-paths.json'),
                 'artifacts': [record(path) for path in sorted(staging.iterdir())],
@@ -126,7 +130,7 @@ def build(options):
         packages, inputs = collect_packages(options, workspace, base['files']['rootfs'])
         context = dict(options=options, base=base, packages=packages, inputs=inputs,
                        staging=workspace / 'publish')
-        write_container_inputs(context)
+        context = dict(context, overlay=write_container_inputs(context))
         run_container(context)
         return publish(context)
 
