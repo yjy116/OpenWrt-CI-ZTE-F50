@@ -61,10 +61,13 @@ done
 find /etc/uci-defaults -type f | sort > /out/deferred-uci-defaults.txt
 
 for file in www/luci-static/resources/view/status/include/15_f50_thermal.js \
-            usr/share/rpcd/acl.d/luci-f50-thermal.json; do
+            usr/share/rpcd/acl.d/luci-f50-thermal.json opt/mu300/bin/mu300-led; do
     mkdir -p "/$(dirname "$file")"
     cp "/in/overlay/$file" "/$file"
-    chmod 0644 "/$file"
+    case "$file" in
+        opt/mu300/bin/mu300-led) chmod 0755 "/$file" ;;
+        *) chmod 0644 "/$file" ;;
+    esac
 done
 
 kernel_release=$(cat /in/kernel.release)

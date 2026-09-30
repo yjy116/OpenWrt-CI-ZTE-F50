@@ -26,9 +26,21 @@ SQM、MT3600BE 风扇/存储/WoL/AC/打印硬件组件排除。HomeProxy 使用�
 | 系统 | 定时重启、Aurora 主题配置 |
 
 界面包含中文翻译。具体版本、依赖和包来源见输入锁。
-F50 温度卡片作为固件自带 LuCI 组件随镜像加入，包数量仍为 247。组装只复制两个
-明确审核过的页面/只读 ACL 文件，并验证源码与最终 rootfs 内字节、权限完全一致；
+F50 温度卡片作为固件自带 LuCI 组件随镜像加入，包数量仍为 247。组装只复制白名单内的
+两个页面/只读 ACL 文件及下述 LED 脚本，并验证源码与最终 rootfs 内字节、权限完全一致；
 细节见 [温度组件说明](README-f50-thermal.md)。
+
+F50 有独立 Wi-Fi 白灯，实机短暂点亮测试确认其对应 `keyboard-backlight` LED 通道。
+固定上游的 `mu300-led` 没有给 F50 配置 Wi-Fi 通道，并错误描述为仅有一枚 RGB 灯。
+本仓库保留该脚本全文，仅更正说明并增加明确的 `f50` 映射：2.4/5 GHz 的 `wifi on`
+均通过既有亮度函数点亮 `keyboard-backlight`，`wifi off` 关闭；蜂窝数据、告警、U30 Air
+及未知设备的既有映射保留。来源为
+[mu300-linux 1a69a41 的 mu300-led](https://github.com/dikeckaan/mu300-linux/blob/1a69a41ea9d20fadd575e9b082364d61ce5fcf9a/rootfs/overlay/opt/mu300/bin/mu300-led)，
+原脚本 SHA256 为 `8857d436a2a3f29786d2e938bc251c4c7088ea2ed4de17eeb9e5f9d87e134f0a`。
+脚本在镜像中须为 root:root、0755，两份温度文件仍为 0644。
+现有 `mu300-post` 在启动后检查 AP，并调用 `mu300-led wifi on`；本次只修复这一调用和
+工具 `wifi on/off` 的灯映射，没有增加运行期监听服务，也未证明 LuCI 的每种动态启停
+操作都会同步灯状态。灯状态修复不能替代 Wi-Fi 接入异常或自动返回 Android 的诊断。
 
 原安装器即使选择 7.2，也会下载 `mu300-kernel.tar.gz` 的 5.4 参考包，使用其中的
 通用工具构建启动镜像。因此输出同时保留该公开参考包的原始字节；这不代表升级时
@@ -83,6 +95,7 @@ GitHub 将 25 个资产名中的 `~` 改成了 `.`。锁中的 `source.url` 使�
 
 ```sh
 timeout 60s python3 -B -m unittest discover -s tests
+node --test tests/test_thermal.js
 python3 scripts/assemble.py --tag vYYYY.MM.DD-f50.1 \
   --repository OWNER/REPOSITORY --output out
 ```
@@ -90,6 +103,10 @@ python3 scripts/assemble.py --tag vYYYY.MM.DD-f50.1 \
 也可提供 `--local-base /path/to/public-base-inputs` 与
 `--local-packages /path/to/verified-apks-and-public-keys`。目录内文件仍须与输入锁的
 名称、大小及 SHA256 完全一致。它们不是从 F50 导出的文件系统或配置目录。
+
+LED 行为测试执行真实 shell 脚本，使用隔离的 sysfs 文件与设备/信道输入，要求 POSIX
+shell 和可建立 `sc27xx:blue` 等 Linux 文件名的文件系统。原生 Windows/NTFS 无法执行
+该组测试；测试会明确报错，不会跳过或换成修改后的脚本。完整测试在 Linux CI 执行。
 
 容器使用 `--network none`；仅导入已校验公开 rootfs，使用单独临时公钥目录校验
 自签 APK；官方无单包签名的 APK 则用原始签名索引先 update，再按精确版本安装。
@@ -140,8 +157,9 @@ MU300_REPO=OWNER/REPOSITORY MU300_RELEASE=vYYYY.MM.DD-f50.1 mu300-update apply o
 此处只是格式说明，本阶段没有执行设备升级。普通 LuCI sysupgrade 和 armsr 整盘
 镜像不适用。不得把此 rootfs 直接写入整盘或 Android 原始分区。
 
-验证：17 项 Python 测试、11 项温度组件测试、Shell 语法及 actionlint 通过。
+首版预览验证：17 项 Python 测试、11 项温度组件测试、Shell 语法及 actionlint 通过。
 云产物的内外包清单均为精确锁定的 247 包，31 个模块与内核 bundle 字节一致，
-两份温度文件与源码 SHA、权限一致，Vlmcsd 三项默认关闭，首次启动脚本完整保留，
+首版两份温度文件与源码 SHA、权限一致，Vlmcsd 三项默认关闭，首次启动脚本完整保留，
 未发现构建阶段生成的设备身份或私人配置。温度组件已在现有 F50 单独部署并验证
 六个测温点和自动刷新；完整新 rootfs 尚未实机升级。已有总台账第 23 项跟踪。
+新增 LED overlay 的镜像构建及完整 Linux 行为回归应重新执行；首版产物不包含该修复。
