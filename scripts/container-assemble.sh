@@ -65,7 +65,6 @@ uci set luci.main.lang=zh_cn
 uci set luci.main.mediaurlbase=/luci-static/aurora
 uci commit luci
 apk info -v | sort > /out/installed-packages.txt
-diff -u /in/expected-inventory.txt /out/installed-packages.txt
 
 # Copy excluding host bind mounts and runtime trees. Restore generic resolver
 # and host records explicitly; never ship Docker's host/container identities.

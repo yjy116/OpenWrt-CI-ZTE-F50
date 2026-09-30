@@ -10,6 +10,7 @@ import tempfile
 
 from archive_checks import audit_kernel, audit_reference_kernel, audit_rootfs, clean_name, require
 from inputs import obtain, run, sha256, validate_package_lock
+from inventory import verify_installed_inventory
 from package_inputs import collect_packages
 from updater import make_updater
 
@@ -64,8 +65,6 @@ def write_container_inputs(context):
     (inputs / 'mu300-update').write_text(updater, encoding='utf-8')
     package_lines = [item['package'] + '\t' + item['version'] for item in packages['packages']]
     (inputs / 'expected-packages.tsv').write_text('\n'.join(package_lines) + '\n')
-    inventory = sorted(name + '-' + version for name, version in packages['expected_inventory'].items())
-    (inputs / 'expected-inventory.txt').write_text('\n'.join(inventory) + '\n', encoding='ascii')
     defaults = read_json(ROOT / 'inputs/defaults.json')['uci']
     values = [key + '\t' + value for key, value in defaults.items()]
     (inputs / 'expected-defaults.tsv').write_text('\n'.join(values) + '\n', encoding='ascii')
@@ -90,6 +89,8 @@ def run_container(context):
                image, '/bin/sh', '/in/assemble.sh']
     log = run(command)
     (output / 'assembly.log').write_text(log, encoding='utf-8')
+    actual = (output / 'installed-packages.txt').read_text(encoding='utf-8')
+    verify_installed_inventory(actual, context['packages']['expected_inventory'])
 
 
 def publish(context):

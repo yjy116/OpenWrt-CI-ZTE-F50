@@ -17,6 +17,14 @@
 SQM、MT3600BE 风扇/存储/WoL/AC/打印硬件组件排除。HomeProxy 使用已固定的
 1.12.25 sing-box 适配构建；不能用删除依赖或伪造 kmod 包掩盖未验证的内核缺口。
 
+| LuCI 菜单 | 已包含插件 |
+| --- | --- |
+| VPN | ZeroTier、Tailscale、EasyTier |
+| 服务 | daede、OpenClash、HomeProxy、DDNS、NATMap、nlbwmon、iPerf3、ttyd、UPnP、Vlmcsd |
+| 系统 | 定时重启、Aurora 主题配置 |
+
+界面包含中文翻译。具体版本、依赖和包来源见输入锁。
+
 原安装器即使选择 7.2，也会下载 `mu300-kernel.tar.gz` 的 5.4 参考包，使用其中的
 通用工具构建启动镜像。因此输出同时保留该公开参考包的原始字节；这不代表升级时
 将当前 7.2 切换到 5.4。安装时应明确选择 7.2。
@@ -24,9 +32,13 @@ SQM、MT3600BE 风扇/存储/WoL/AC/打印硬件组件排除。HomeProxy 使用�
 ## 输入锁
 
 `inputs/base.lock.json` 固定通用 rootfs、上游升级器、参考内核和成功云构建的
-7.2.8-f50-dae1 bundle。内核来自公开仓库 `yjy116/f50-daede-kernel`，run
+7.2.8-f50-dae1 bundle。内核构建来自公开仓库 `yjy116/f50-daede-kernel`，run
 `36672813155`、commit `10748c1bb03150748726c4592ebfa1fb30166cb2`。
 其完整编译来源与 BTF/eBPF 验证脚本保留在该仓库。本项目只核验并复用结果。
+内核、全部插件 APK、签名索引和公共密钥现已保存到本仓库的
+[固定构建输入 release](https://github.com/yjy116/OpenWrt-CI-ZTE-F50/releases/tag/build-inputs-2026.09.30)，
+当前组装直接使用其公开下载地址，不依赖跨仓库 Actions 权限或 artifact 保留时间。
+该 release 供 CI 获取依赖，完整固件由组装 workflow 另行生成。
 
 `inputs/packages.lock.json` 固定全部目标 APK、依赖、签名索引与公共密钥，
 `complete: true` 表示输入及版本清单齐全，不表示新镜像已通过启动测试。每项格式如下：
@@ -42,18 +54,23 @@ SQM、MT3600BE 风扇/存储/WoL/AC/打印硬件组件排除。HomeProxy 使用�
 }
 ```
 
-公开 Actions 来源替换 source 为 `repository`、`run_id`、`head_sha`、`artifact`、
-`member`。下载前核验成功运行和 commit；下载后重算 SHA256。不同构建的签名公钥须
+原 Actions 运行号、commit 和 artifact 路径，以及官方原始下载地址保留在
+`source_provenance`。当前 `source` 均指向固定公开 release；下载后重算 SHA256。
+不同构建的签名公钥须
 使用不同 `name`，例如带其哈希前缀的 `.pem`，避免同名密钥覆盖。密钥项不含 package
 或 version；构建拒绝私钥。官方包带 `feed`，对应 `indexes` 中固定哈希的签名
-`packages.adb`，保持仓库原文件名。官方 key 从已验证基础 rootfs 提取并再核哈希。
+`packages.adb`，保持仓库原文件名。官方 key 源自已验证基础 rootfs，其原始 SHA
+与现公开归档一致。
 `dnsmasq-full` 由 APK 在一次 add 事务替换 dnsmasq，无预先删除步骤。
 
 `expected_inventory` 源自固定基底与输入包集合，已与最终设备清单的 247 个包精确
-比对。组装再次比较实际包名和版本全集，额外包、缺包或版本不同均失败。
+比对。容器导出实际清单后，宿主 Python 比较包名和版本全集，额外包、缺包、重复
+条目或版本不同均失败；基础镜像不需要额外安装比较工具。
 
-Actions artifact 会过期。过期或权限不足会明确失败；应将原验证产物保存为可信公开
-release 并更新锁，或重新运行原内核构建、审核新产物后更新锁。不会转而下载 latest。
+GitHub 将 25 个资产名中的 `~` 改成了 `.`。锁中的 `source.url` 使用实际 release
+资产名，`name` 保留 APK 索引所需的原名，下载后按原名保存。release 的
+`INPUT-SOURCES.json` 记录完整映射，`SHA256SUMS` 使用 release 资产名。
+任何缺失、下载错误或哈希差异都会使组装明确失败，不会转而下载 latest。
 
 ## 构建与验证
 
