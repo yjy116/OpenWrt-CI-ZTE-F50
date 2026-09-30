@@ -1,0 +1,14 @@
+{
+  "purpose": "Assert unconfigured proxy and scheduled-service defaults in the public image, without copying device settings.",
+  "uci": {
+    "daed.config.enabled": "0",
+    "zerotier.global.enabled": "0",
+    "openclash.config.enable": "0",
+    "autoreboot.@schedule[0].enabled": "0",
+    "vlmcsd.config.enabled": "0",
+    "easytier.@easytier[0].enabled": "0",
+    "homeproxy.config.main_node": "nil",
+    "homeproxy.server.enabled": "0",
+    "sing-box.main.enabled": "0"
+  }
+}

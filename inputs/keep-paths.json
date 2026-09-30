@@ -1,0 +1,23 @@
+{
+  "status": "reviewed_against_installed_package_paths",
+  "paths": [
+    "etc/daed",
+    "etc/openclash/rule_provider",
+    "etc/openclash/proxy_provider",
+    "etc/openclash/overwrite",
+    "etc/openclash/custom",
+    "etc/openclash/config",
+    "etc/openclash/history",
+    "etc/tailscale",
+    "etc/easytier",
+    "etc/homeproxy/certs",
+    "etc/homeproxy/ruleset",
+    "etc/homeproxy/resources/direct_list.txt",
+    "etc/homeproxy/resources/proxy_list.txt",
+    "etc/sing-box",
+    "etc/zerotier",
+    "etc/crontabs",
+    "etc/vlmcsd.ini"
+  ],
+  "note": "Only used by the updater to copy existing device state locally. No directory from a device is accepted as a build input. OpenClash core and root-level package databases are deliberately excluded from migration. Tailscale uses /etc/tailscale/tailscaled.state; daed uses /etc/daed including wing.db and WAL. Nonstandard storage paths need explicit review. /var -> tmp is runtime state, including nlbwmon's database, not persistent storage. ZeroTier's UCI identity remains in the existing etc/config keep list."
+}

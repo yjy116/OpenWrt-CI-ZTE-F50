@@ -1,0 +1,1611 @@
+{
+  "complete": true,
+  "note": "Pinned public inputs exactly reproduce the 247 package names/versions read from the installed F50. This validates package selection, not a boot test of the assembled rootfs.",
+  "packages": [
+    {
+      "name": "coremark-2025.05.01~1f483d5b-r1.apk",
+      "size": 10247,
+      "sha256": "6b1735e74584b1cf479e1ce7686f2e420eb1211f906013b3b03058da75b4b607",
+      "package": "coremark",
+      "version": "2025.05.01~1f483d5b-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/coremark-2025.05.01~1f483d5b-r1.apk"
+      }
+    },
+    {
+      "name": "curl-8.22.0-r1.apk",
+      "size": 75947,
+      "sha256": "a4f21cf2b4d3c2c18e82c0f885f5ebfe3474a28ce12ee722333db20fd55ff8c4",
+      "package": "curl",
+      "version": "8.22.0-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/curl-8.22.0-r1.apk"
+      }
+    },
+    {
+      "name": "daed-2026.09.24_p1-r2-aarch64_generic.apk",
+      "size": 23697776,
+      "sha256": "0dae16af37e7b34380c4213b39e1d70f5da968879b3ff9cd2e0799292f19b6fb",
+      "package": "daed",
+      "version": "2026.09.24_p1-r2",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36676085494,
+        "head_sha": "87104e669c8f515efa02a5b119b948d652be1023",
+        "artifact": "f50-networking-packages",
+        "member": "daed-2026.09.24_p1-r2-aarch64_generic.apk"
+      }
+    },
+    {
+      "name": "ddns-scripts-2.8.4-r8.apk",
+      "size": 23688,
+      "sha256": "1f8d7b41ff802d3e2ecd00ef1afdb525aa31abe77705e933e04b514d7bc76836",
+      "package": "ddns-scripts",
+      "version": "2.8.4-r8",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ddns-scripts-2.8.4-r8.apk"
+      }
+    },
+    {
+      "name": "ddns-scripts-aliyun-2.8.4-r8.apk",
+      "size": 3565,
+      "sha256": "6319b91db8842c2e07f4d0d5acf6a0b553c4fc134d3b032609df90d2c68fc86e",
+      "package": "ddns-scripts-aliyun",
+      "version": "2.8.4-r8",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ddns-scripts-aliyun-2.8.4-r8.apk"
+      }
+    },
+    {
+      "name": "ddns-scripts-cloudflare-2.8.4-r8.apk",
+      "size": 4610,
+      "sha256": "05e1d6f6b6e8884e0ca33cd8fa4605e508ca690354bfb72e0b1b61fa8cbdff30",
+      "package": "ddns-scripts-cloudflare",
+      "version": "2.8.4-r8",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ddns-scripts-cloudflare-2.8.4-r8.apk"
+      }
+    },
+    {
+      "name": "ddns-scripts-dnspod-v3-2.8.4-r8.apk",
+      "size": 4714,
+      "sha256": "09ad6d36736c21087c0b6aeb444bed0609726472c791ff67abb55257dee4cd4c",
+      "package": "ddns-scripts-dnspod-v3",
+      "version": "2.8.4-r8",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ddns-scripts-dnspod-v3-2.8.4-r8.apk"
+      }
+    },
+    {
+      "name": "ddns-scripts-services-2.8.4-r8.apk",
+      "size": 6841,
+      "sha256": "f80eb97919ed2aa73a2879d22e48acc2dc2d651d55a8055e4aed7a17a7df8551",
+      "package": "ddns-scripts-services",
+      "version": "2.8.4-r8",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ddns-scripts-services-2.8.4-r8.apk"
+      }
+    },
+    {
+      "name": "dnsmasq-full-2.93-r1.apk",
+      "size": 215129,
+      "sha256": "57d4833d89805367cec620ad71ef23d5f9257af273eeaa26fed032acc80226be",
+      "package": "dnsmasq-full",
+      "version": "2.93-r1",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/dnsmasq-full-2.93-r1.apk"
+      }
+    },
+    {
+      "name": "easytier-2.6.4-r1-aarch64_generic.apk",
+      "size": 14731754,
+      "sha256": "a412543f1cd4efb6570c12359e0b0ac2326482b2a8ffd6968f7125454c6a8d72",
+      "package": "easytier",
+      "version": "2.6.4-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699114670,
+        "head_sha": "07fbcc692d1440110cd8e5d3deb49fe9b5b4b0de",
+        "artifact": "f50-easytier",
+        "member": "easytier-2.6.4-r1-aarch64_generic.apk"
+      }
+    },
+    {
+      "name": "htop-3.5.1-r1.apk",
+      "size": 132524,
+      "sha256": "7a92aa316f79dd72d37903138d3977ff6908262d30f97ed176158de657fcd416",
+      "package": "htop",
+      "version": "3.5.1-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/htop-3.5.1-r1.apk"
+      }
+    },
+    {
+      "name": "iperf3-3.20-r1.apk",
+      "size": 2863,
+      "sha256": "6dc073704ef9e32daf21c24d412a313610a28d11d36ef7982037394df741066a",
+      "package": "iperf3",
+      "version": "3.20-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/iperf3-3.20-r1.apk"
+      }
+    },
+    {
+      "name": "libatomic1-14.3.0-r5.apk",
+      "size": 7786,
+      "sha256": "0184617aa8516ba5c88e76559ad88321fab71dd85e74b371a819202acf97f0fc",
+      "package": "libatomic1",
+      "version": "14.3.0-r5",
+      "feed": "targets-packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/targets/armsr/armv8/packages/libatomic1-14.3.0-r5.apk"
+      }
+    },
+    {
+      "name": "libcap-2.69-r1.apk",
+      "size": 16255,
+      "sha256": "a4abdf822cd2195f3a5bf92f13e40aaa60fa1b4de8f172db002ee10a442e5595",
+      "package": "libcap",
+      "version": "2.69-r1",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/libcap-2.69-r1.apk"
+      }
+    },
+    {
+      "name": "libcap-ng-0.8.4-r2.apk",
+      "size": 8976,
+      "sha256": "d81f2dee6a45c817646347c435b23a1a22d84fb6e66b54992e8351db8fdc32f9",
+      "package": "libcap-ng",
+      "version": "0.8.4-r2",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libcap-ng-0.8.4-r2.apk"
+      }
+    },
+    {
+      "name": "libcurl4-8.22.0-r1.apk",
+      "size": 265991,
+      "sha256": "2cab183a4bf921a1d90ca17f17bce1e2775c9fff2ec103db4ec9b4baa6b75f50",
+      "package": "libcurl4",
+      "version": "8.22.0-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libcurl4-8.22.0-r1.apk"
+      }
+    },
+    {
+      "name": "libgmp10-6.3.0-r2.apk",
+      "size": 221889,
+      "sha256": "83e138d7ec3bcf8ee848a69118463c1d5ac530e7be7041fc52786766581c5d44",
+      "package": "libgmp10",
+      "version": "6.3.0-r2",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/libgmp10-6.3.0-r2.apk"
+      }
+    },
+    {
+      "name": "libiperf3-3.20-r1.apk",
+      "size": 71514,
+      "sha256": "305fa69a8a0118c85a1b4119312d176ed476a75a99cb85af44cdce1a43ba3cb5",
+      "package": "libiperf3",
+      "version": "3.20-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libiperf3-3.20-r1.apk"
+      }
+    },
+    {
+      "name": "liblua5.1.5-5.1.5-r11.apk",
+      "size": 75907,
+      "sha256": "3e46c5db416841f374e0402175f0dba25dde6ac01d5b39f9799b53c316e31686",
+      "package": "liblua5.1.5",
+      "version": "5.1.5-r11",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/liblua5.1.5-5.1.5-r11.apk"
+      }
+    },
+    {
+      "name": "liblucihttp-lua-2023.03.15~9b5b683f-r1.apk",
+      "size": 3898,
+      "sha256": "92d900c41fe944acb5ab6b5467538ea67a851bce4d5805fc5204b08247a7fab8",
+      "package": "liblucihttp-lua",
+      "version": "2023.03.15~9b5b683f-r1",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/liblucihttp-lua-2023.03.15~9b5b683f-r1.apk"
+      }
+    },
+    {
+      "name": "libminiupnpc-2.2.8-r1.apk",
+      "size": 22513,
+      "sha256": "40394b7d70b75bf5b4a97ebe0fc4bc7b92e94afef05eefba0dc9a50ccc16b325",
+      "package": "libminiupnpc",
+      "version": "2.2.8-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libminiupnpc-2.2.8-r1.apk"
+      }
+    },
+    {
+      "name": "libnatpmp1-20230423-r2.apk",
+      "size": 4338,
+      "sha256": "6fa3ebc3c30167578a1c434674e734ae64ff5c8ca33bd7d4b61a35a458d76f04",
+      "package": "libnatpmp1",
+      "version": "20230423-r2",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libnatpmp1-20230423-r2.apk"
+      }
+    },
+    {
+      "name": "libnetfilter-conntrack3-1.1.0_p1-r1-aarch64_generic.apk",
+      "size": 40296,
+      "sha256": "7674e61926a4859336de595faf5e0c976988513e18b7fbe8794ffbb6dc99b2ff",
+      "package": "libnetfilter-conntrack3",
+      "version": "1.1.0_p1-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36697469152,
+        "head_sha": "619014955e93de4f73cc5b4d489a0ebdd39301fa",
+        "artifact": "f50-mt-plugins",
+        "member": "libnetfilter-conntrack3-1.1.0_p1-r1-aarch64_generic.apk"
+      }
+    },
+    {
+      "name": "libnettle8-3.10.2-r1.apk",
+      "size": 356291,
+      "sha256": "3241beb238c9a25fe8cd386c84ff259d3a4a30ad0f7ff9c7f60339d09c634d37",
+      "package": "libnettle8",
+      "version": "3.10.2-r1",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/libnettle8-3.10.2-r1.apk"
+      }
+    },
+    {
+      "name": "libnfnetlink0-1.0.2-r1.apk",
+      "size": 11111,
+      "sha256": "cc2b1276c2f8f65f3417474a68c8d2dcc4076484a502ab343777a734a82e6fe8",
+      "package": "libnfnetlink0",
+      "version": "1.0.2-r1",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/libnfnetlink0-1.0.2-r1.apk"
+      }
+    },
+    {
+      "name": "libnghttp2-14-1.70.0-r1.apk",
+      "size": 69648,
+      "sha256": "632d86dc9ecd68248a9c9db622e5703223bbf3760bb16680ad1eed1ca1768f09",
+      "package": "libnghttp2-14",
+      "version": "1.70.0-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libnghttp2-14-1.70.0-r1.apk"
+      }
+    },
+    {
+      "name": "libpcap1-1.10.6-r1.apk",
+      "size": 120900,
+      "sha256": "d1614a6f50ed8f657ece234659c4325d5e03207003fc8938e0b9b277c96b4fd3",
+      "package": "libpcap1",
+      "version": "1.10.6-r1",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/libpcap1-1.10.6-r1.apk"
+      }
+    },
+    {
+      "name": "libruby3.4-3.4.9-r1.apk",
+      "size": 1462425,
+      "sha256": "45773677d305ba5c67a8738443595fec021ba82fea44677a32aa96aa3b40ae6a",
+      "package": "libruby3.4",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libruby3.4-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "libstdcpp6-14.3.0-r5.apk",
+      "size": 643395,
+      "sha256": "742505de855b7f3b07e64cc58aad413cef8ced220756b28b02cb714128f04aac",
+      "package": "libstdcpp6",
+      "version": "14.3.0-r5",
+      "feed": "targets-packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/targets/armsr/armv8/packages/libstdcpp6-14.3.0-r5.apk"
+      }
+    },
+    {
+      "name": "libubus-lua-2026.06.28~24864e78-r2.apk",
+      "size": 7732,
+      "sha256": "cc66ea99bc6b6009b755044794916b89aa6a2982cfa4ad27be3f37fc3cdbab01",
+      "package": "libubus-lua",
+      "version": "2026.06.28~24864e78-r2",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/libubus-lua-2026.06.28~24864e78-r2.apk"
+      }
+    },
+    {
+      "name": "libuv1-1.48.0-r1.apk",
+      "size": 75782,
+      "sha256": "20bf070f03483710420feed31e50a8099fd8c254cec510ce3661891c1e2456d6",
+      "package": "libuv1",
+      "version": "1.48.0-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libuv1-1.48.0-r1.apk"
+      }
+    },
+    {
+      "name": "libwebsockets-full-4.4.1-r1.apk",
+      "size": 274316,
+      "sha256": "4afce9b69fff865ec366363b9d2cbee566faff774564b12d4126701ca0edb0b4",
+      "package": "libwebsockets-full",
+      "version": "4.4.1-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libwebsockets-full-4.4.1-r1.apk"
+      }
+    },
+    {
+      "name": "libyaml-0.2.5-r2.apk",
+      "size": 41822,
+      "sha256": "495d517fe854187dc283598ebe87499a4a74d49fc43380951dfcfc92323cb822",
+      "package": "libyaml",
+      "version": "0.2.5-r2",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/libyaml-0.2.5-r2.apk"
+      }
+    },
+    {
+      "name": "lua-5.1.5-r11.apk",
+      "size": 5617,
+      "sha256": "195a872322fd03c2147c781b0fdca6f53beff1462ee6ac0cfe18a829ae5e282d",
+      "package": "lua",
+      "version": "5.1.5-r11",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/lua-5.1.5-r11.apk"
+      }
+    },
+    {
+      "name": "luci-app-aurora-config-1.2.5-r20260920.apk",
+      "size": 138528,
+      "sha256": "ad2ccc9d0e665a6448ed5b9d2fc1d87af85677edc81a468918d9a9f5dc8d0964",
+      "package": "luci-app-aurora-config",
+      "version": "1.2.5-r20260920",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36695592838,
+        "head_sha": "8a303ad2b68238f442dcc875923d9a3bc380d99a",
+        "artifact": "f50-aurora-config",
+        "member": "luci-app-aurora-config-1.2.5-r20260920.apk"
+      }
+    },
+    {
+      "name": "luci-app-autoreboot-26.261.08411_p1-r1-noarch.apk",
+      "size": 3313,
+      "sha256": "083f90b55cf4b62cd196baf9b96dc62f0764a425fbb8eb54cef9ab2957481b07",
+      "package": "luci-app-autoreboot",
+      "version": "26.261.08411_p1-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36696731699,
+        "head_sha": "cb46d592af7fb5bbeb0469091e02a98f4cf1a542",
+        "artifact": "f50-mt-luci",
+        "member": "luci-app-autoreboot-26.261.08411_p1-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-app-daede-1.15_p1-r6-noarch.apk",
+      "size": 98042,
+      "sha256": "03e53249ca9e6250d6ea92c023e94135ab5ec72e87bcdf9fb447998d5660d109",
+      "package": "luci-app-daede",
+      "version": "1.15_p1-r6",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36676085494,
+        "head_sha": "87104e669c8f515efa02a5b119b948d652be1023",
+        "artifact": "f50-networking-packages",
+        "member": "luci-app-daede-1.15_p1-r6-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-app-ddns-26.270.72870~a24d1f2.apk",
+      "size": 13324,
+      "sha256": "e04ff3d38d51e3f1ac7e3f2e4afec3146377ac9153f72cffb169661b72d1b2ea",
+      "package": "luci-app-ddns",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-app-ddns-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-app-easytier-2.6.4-r3-noarch.apk",
+      "size": 71245,
+      "sha256": "56700113f827b177e2f0c764fefd3eeceb939081723fee7f3c6125ce19f09f07",
+      "package": "luci-app-easytier",
+      "version": "2.6.4-r3",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699114670,
+        "head_sha": "07fbcc692d1440110cd8e5d3deb49fe9b5b4b0de",
+        "artifact": "f50-easytier",
+        "member": "luci-app-easytier-2.6.4-r3-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-app-homeproxy-2026.09.30-r1-noarch.apk",
+      "size": 580527,
+      "sha256": "b0ac03409e8a6b2888ed85c2564d40db6a1b7be49848628cf588670e55c93038",
+      "package": "luci-app-homeproxy",
+      "version": "2026.09.30-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699648597,
+        "head_sha": "e07074203c487300914885161f55c9bc0aa52417",
+        "artifact": "f50-homeproxy",
+        "member": "luci-app-homeproxy-2026.09.30-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-app-iperf3-0.1_p1-r1-noarch.apk",
+      "size": 2842,
+      "sha256": "8f96f46798cc7a846dd6e835584545ae9115f11931465180b7af4d85d1a7b3fe",
+      "package": "luci-app-iperf3",
+      "version": "0.1_p1-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36696731699,
+        "head_sha": "cb46d592af7fb5bbeb0469091e02a98f4cf1a542",
+        "artifact": "f50-mt-luci",
+        "member": "luci-app-iperf3-0.1_p1-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-app-natmap-26.270.72870~a24d1f2.apk",
+      "size": 2530,
+      "sha256": "8510923c15a9700120b887d73f69f9c2f438c158e96cd006ec5b0d346a189c78",
+      "package": "luci-app-natmap",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-app-natmap-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-app-nlbwmon-26.270.72870~a24d1f2.apk",
+      "size": 12096,
+      "sha256": "adf90358165346415f7322a47ce9dd695474cca168620a64fe99341d54ab5892",
+      "package": "luci-app-nlbwmon",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-app-nlbwmon-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-app-openclash-0.47.167-r1-noarch.apk",
+      "size": 8331820,
+      "sha256": "c5b2c5179d21dd64f76af902c9a50f724c631e7beef20d961968b9c280b1ddf1",
+      "package": "luci-app-openclash",
+      "version": "0.47.167-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36697568408,
+        "head_sha": "6d85c7d02f439f06724dd5051f05cb53ce199974",
+        "artifact": "f50-openclash",
+        "member": "luci-app-openclash-0.47.167-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-app-tailscale-community-26.270.72870~a24d1f2-r1-noarch.apk",
+      "size": 11203,
+      "sha256": "3ec4339328a8d313d6bd0a277a076be8bc3f3994ddcb601e9466f1b363eda9a5",
+      "package": "luci-app-tailscale-community",
+      "version": "26.270.72870~a24d1f2-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699110463,
+        "head_sha": "07fbcc692d1440110cd8e5d3deb49fe9b5b4b0de",
+        "artifact": "f50-vpn-menu",
+        "member": "luci-app-tailscale-community-26.270.72870~a24d1f2-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-app-ttyd-26.270.72870~a24d1f2.apk",
+      "size": 2990,
+      "sha256": "aa8271fff27141fd6a0713454915d1357c562440ffada11930deb25270f52d8a",
+      "package": "luci-app-ttyd",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-app-ttyd-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-app-upnp-26.270.72870~a24d1f2.apk",
+      "size": 5385,
+      "sha256": "bd9b5b4868767dc8a61b40350d1f562d9ac71e7a91946aa0e01d682c5f576f78",
+      "package": "luci-app-upnp",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-app-upnp-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-app-vlmcsd-26.261.08411_p1-r1-noarch.apk",
+      "size": 2357,
+      "sha256": "d869998dd4a0e7e45f9f509bdcf8db618b056c0c83fe7dce3c01ae53f7a5a408",
+      "package": "luci-app-vlmcsd",
+      "version": "26.261.08411_p1-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36696731699,
+        "head_sha": "cb46d592af7fb5bbeb0469091e02a98f4cf1a542",
+        "artifact": "f50-mt-luci",
+        "member": "luci-app-vlmcsd-26.261.08411_p1-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-app-zerotier-1.1.0_p2-r1-noarch.apk",
+      "size": 6578,
+      "sha256": "8e8fdc3deac37abd62813cd8d80057a20803830e27279612ec3ffe9022551452",
+      "package": "luci-app-zerotier",
+      "version": "1.1.0_p2-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36689368604,
+        "head_sha": "2db8341640972e284d4594f901182674ed903b32",
+        "artifact": "f50-zerotier-ui",
+        "member": "ui/luci-app-zerotier-1.1.0_p2-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-compat-26.270.72870~a24d1f2.apk",
+      "size": 48275,
+      "sha256": "81a278a2d9f814a69df782808598f21feffb71e1a1efa8bd1a91d2fd4451c0ad",
+      "package": "luci-compat",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-compat-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-aurora-config-zh-cn-26.262.58276.362887a.apk",
+      "size": 12945,
+      "sha256": "679a02c4f8d473e53703e32a5c5d2b2000ba0de31624c2aed1a829dddbe54092",
+      "package": "luci-i18n-aurora-config-zh-cn",
+      "version": "26.262.58276~362887a",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36695592838,
+        "head_sha": "8a303ad2b68238f442dcc875923d9a3bc380d99a",
+        "artifact": "f50-aurora-config-zh-cn",
+        "member": "luci-i18n-aurora-config-zh-cn-26.262.58276.362887a.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-autoreboot-zh-cn-26.261.08411_p1-r1-noarch.apk",
+      "size": 1917,
+      "sha256": "cf1d7e702ab74bab3937b36b03338a8c4c6d05391e4f441f02c596d2c6062de3",
+      "package": "luci-i18n-autoreboot-zh-cn",
+      "version": "26.261.08411_p1-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36696731699,
+        "head_sha": "cb46d592af7fb5bbeb0469091e02a98f4cf1a542",
+        "artifact": "f50-mt-luci",
+        "member": "luci-i18n-autoreboot-zh-cn-26.261.08411_p1-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-base-zh-cn-26.270.72870~a24d1f2.apk",
+      "size": 65296,
+      "sha256": "28c46964a2f3f4f88d65c639f0ce7e84c2813ca4b81381671b6b171c47310724",
+      "package": "luci-i18n-base-zh-cn",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-i18n-base-zh-cn-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-ddns-zh-cn-26.270.72870~a24d1f2.apk",
+      "size": 5734,
+      "sha256": "3caf347b3e5e4e447947956045d6c726e8255d5ca3077cc1335daf26ebcc43d6",
+      "package": "luci-i18n-ddns-zh-cn",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-i18n-ddns-zh-cn-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-easytier-zh-cn-26.136.03667~39d7eda-r2-noarch.apk",
+      "size": 15263,
+      "sha256": "5861de32ae74336e87fa882bbe57afffb93a68efb06a278d024bb9670beff531",
+      "package": "luci-i18n-easytier-zh-cn",
+      "version": "26.136.03667~39d7eda-r2",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699114670,
+        "head_sha": "07fbcc692d1440110cd8e5d3deb49fe9b5b4b0de",
+        "artifact": "f50-easytier",
+        "member": "luci-i18n-easytier-zh-cn-26.136.03667~39d7eda-r2-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-homeproxy-zh-cn-2026.09.30-r1-noarch.apk",
+      "size": 16580,
+      "sha256": "d871cd07998a186b1c2a42ed9913c9a13e6ebf6962d3d44d7440f2e27f168012",
+      "package": "luci-i18n-homeproxy-zh-cn",
+      "version": "2026.09.30-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699648597,
+        "head_sha": "e07074203c487300914885161f55c9bc0aa52417",
+        "artifact": "f50-homeproxy",
+        "member": "luci-i18n-homeproxy-zh-cn-2026.09.30-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-iperf3-zh-cn-0.1_p1-r1-noarch.apk",
+      "size": 1786,
+      "sha256": "a7ee3654444c3dcd018a1cf031b803115e4e1b3885798abfc6b19f9d36ee5b51",
+      "package": "luci-i18n-iperf3-zh-cn",
+      "version": "0.1_p1-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36696731699,
+        "head_sha": "cb46d592af7fb5bbeb0469091e02a98f4cf1a542",
+        "artifact": "f50-mt-luci",
+        "member": "luci-i18n-iperf3-zh-cn-0.1_p1-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-natmap-zh-cn-26.270.72870~a24d1f2.apk",
+      "size": 1562,
+      "sha256": "f7836926cea9e73863b5d8d029a827029505a731cd0ff471f8d9cfa0f9d51ad4",
+      "package": "luci-i18n-natmap-zh-cn",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-i18n-natmap-zh-cn-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-nlbwmon-zh-cn-26.270.72870~a24d1f2.apk",
+      "size": 4180,
+      "sha256": "8107ee36e3f00d9cdaa5b744f919c90aed152be7ca73e0dada1496b79bee06ca",
+      "package": "luci-i18n-nlbwmon-zh-cn",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-i18n-nlbwmon-zh-cn-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-tailscale-community-zh-cn-26.270.72870~a24d1f2-r1-noarch.apk",
+      "size": 4148,
+      "sha256": "e91abb5f258aebf2ca8bfcd07b9a71ea5eedf379d14016ce73c1626b6d88964d",
+      "package": "luci-i18n-tailscale-community-zh-cn",
+      "version": "26.270.72870~a24d1f2-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699110463,
+        "head_sha": "07fbcc692d1440110cd8e5d3deb49fe9b5b4b0de",
+        "artifact": "f50-vpn-menu",
+        "member": "luci-i18n-tailscale-community-zh-cn-26.270.72870~a24d1f2-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-ttyd-zh-cn-26.270.72870~a24d1f2.apk",
+      "size": 2432,
+      "sha256": "69a799958c9bb45685b78b6b70176ddf48993d13c9494d0f2fc4ef6572ac4b5f",
+      "package": "luci-i18n-ttyd-zh-cn",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-i18n-ttyd-zh-cn-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-upnp-zh-cn-26.270.72870~a24d1f2.apk",
+      "size": 2350,
+      "sha256": "c8b48464570b8a9e9405306a3690cbd45a9a4ce5e6669f8d4162dafb85d4b168",
+      "package": "luci-i18n-upnp-zh-cn",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-i18n-upnp-zh-cn-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-i18n-vlmcsd-zh-cn-26.261.08411_p1-r1-noarch.apk",
+      "size": 1565,
+      "sha256": "0f94668afa5e83d982d9b90d6d7edc144f3a2108aa1080f6467247e27e9b6033",
+      "package": "luci-i18n-vlmcsd-zh-cn",
+      "version": "26.261.08411_p1-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36696731699,
+        "head_sha": "cb46d592af7fb5bbeb0469091e02a98f4cf1a542",
+        "artifact": "f50-mt-luci",
+        "member": "luci-i18n-vlmcsd-zh-cn-26.261.08411_p1-r1-noarch.apk"
+      }
+    },
+    {
+      "name": "luci-lib-base-26.270.72870~a24d1f2.apk",
+      "size": 10467,
+      "sha256": "6b66648807199e0767e34aff9895782be1d98d9fe0fc45090830b4c7ece48b58",
+      "package": "luci-lib-base",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-lib-base-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-lib-chartjs-26.270.72870~a24d1f2.apk",
+      "size": 10843,
+      "sha256": "12f5f62657496f5d96bd677e7bde340f54919eaa45835c3fc92362a8d5743215",
+      "package": "luci-lib-chartjs",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-lib-chartjs-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-lib-ip-26.270.72870~a24d1f2.apk",
+      "size": 12561,
+      "sha256": "9144c3e895bfbeef38fbd6c35cc5d2501e99880dcaf71a88488a90f5397841df",
+      "package": "luci-lib-ip",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-lib-ip-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-lib-jsonc-26.270.72870~a24d1f2.apk",
+      "size": 4920,
+      "sha256": "687d68ca2d4058f24da4329ce8202bbbace9fe9e4c59406035589d0ad0cac416",
+      "package": "luci-lib-jsonc",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-lib-jsonc-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-lib-nixio-26.270.72870~a24d1f2.apk",
+      "size": 33553,
+      "sha256": "07aed18e79cf6edce4b2b9fa27f21c6bd92d309740e3663c6a23af3a177e434d",
+      "package": "luci-lib-nixio",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-lib-nixio-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-lua-runtime-26.270.72870~a24d1f2.apk",
+      "size": 31193,
+      "sha256": "62913bba10587455ddd6c1bda06a020abd11920e8d02df094efd059b9b92f38d",
+      "package": "luci-lua-runtime",
+      "version": "26.270.72870~a24d1f2",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/luci-lua-runtime-26.270.72870~a24d1f2.apk"
+      }
+    },
+    {
+      "name": "luci-theme-aurora-1.4.0-r20260920.apk",
+      "size": 184983,
+      "sha256": "303d09fa319e02b4d65c80985b0afeaae07e2b06af03fc61aa89d407b12fad42",
+      "package": "luci-theme-aurora",
+      "version": "1.4.0-r20260920",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36690559052,
+        "head_sha": "240381b02ea1f9783961ed80b5a9ccf74d1342bd",
+        "artifact": "f50-theme-aurora",
+        "member": "luci-theme-aurora-1.4.0-r20260920.apk"
+      }
+    },
+    {
+      "name": "mihomo-openclash-1.19.31-r1-aarch64_generic.apk",
+      "size": 20628376,
+      "sha256": "70c3bb36c7a206e3ccc1b647cdeb6c24456558fef380d6423a75c5b7491fed7d",
+      "package": "mihomo-openclash",
+      "version": "1.19.31-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36697568408,
+        "head_sha": "6d85c7d02f439f06724dd5051f05cb53ce199974",
+        "artifact": "f50-openclash",
+        "member": "mihomo-openclash-1.19.31-r1-aarch64_generic.apk"
+      }
+    },
+    {
+      "name": "miniupnpd-nftables-2.3.9-r1.apk",
+      "size": 85850,
+      "sha256": "b32e459968a8e4a2c6a6b3b9b2773c79b4b0f3ca1b039943bc8dea77fac3a773",
+      "package": "miniupnpd-nftables",
+      "version": "2.3.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/miniupnpd-nftables-2.3.9-r1.apk"
+      }
+    },
+    {
+      "name": "nano-9.2-r1.apk",
+      "size": 78821,
+      "sha256": "32b08338a95d16c5ced0ffef92856ac48e36b7fa740a393e3b3c8e13fa743aa6",
+      "package": "nano",
+      "version": "9.2-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/nano-9.2-r1.apk"
+      }
+    },
+    {
+      "name": "natmap-20260214-r1.apk",
+      "size": 23766,
+      "sha256": "e35b68c66daa0a08e99ab894234135c7445001501729af1c6b350759f5e10ade",
+      "package": "natmap",
+      "version": "20260214-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/natmap-20260214-r1.apk"
+      }
+    },
+    {
+      "name": "nlbwmon-2025.06.02~29236be6-r2-aarch64_generic.apk",
+      "size": 21883,
+      "sha256": "5b7d164065f2d09dd43b8881da621a8ddb4120426785e24bf81fa723227e747f",
+      "package": "nlbwmon",
+      "version": "2025.06.02~29236be6-r2",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36697469152,
+        "head_sha": "619014955e93de4f73cc5b4d489a0ebdd39301fa",
+        "artifact": "f50-mt-plugins",
+        "member": "nlbwmon-2025.06.02~29236be6-r2-aarch64_generic.apk"
+      }
+    },
+    {
+      "name": "openssh-sftp-server-10.5_p1-r1.apk",
+      "size": 61869,
+      "sha256": "0c108fa4618a38a80aa792bf86d39665fb1d2d0382308e736538dad919a09be2",
+      "package": "openssh-sftp-server",
+      "version": "10.5_p1-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/openssh-sftp-server-10.5_p1-r1.apk"
+      }
+    },
+    {
+      "name": "resolveip-2.apk",
+      "size": 2430,
+      "sha256": "7002e537ae79f3edb0aa4221f7bcd2bdb0662c613738c6f07329f567ec860452",
+      "package": "resolveip",
+      "version": "2",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/resolveip-2.apk"
+      }
+    },
+    {
+      "name": "ruby-3.4.9-r1.apk",
+      "size": 2368,
+      "sha256": "8ed747f098bcf45962b9386b26fe2f4ff06ac25292ceccc4a6646f1d9dda3835",
+      "package": "ruby",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "ruby-bigdecimal-3.4.9-r1.apk",
+      "size": 122633,
+      "sha256": "675ce322ca19bbe6f45cd72ea2688d949658881953742e344088821eb9913fe4",
+      "package": "ruby-bigdecimal",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-bigdecimal-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "ruby-date-3.4.9-r1.apk",
+      "size": 62685,
+      "sha256": "4eb15bcb951f3c4945aeae8576d6470176b9d30f236d3163ca27d18cbfa3241f",
+      "package": "ruby-date",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-date-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "ruby-digest-3.4.9-r1.apk",
+      "size": 27288,
+      "sha256": "80f85b3d0118c5d25d62e11c5fabbab4c295146ab2c954693dc14c0c6a8de3fc",
+      "package": "ruby-digest",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-digest-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "ruby-enc-3.4.9-r1.apk",
+      "size": 10517,
+      "sha256": "3f07c3cfeb725e25bcae22b2623abbef961e7ab4df8eb994c633c7066f249a63",
+      "package": "ruby-enc",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-enc-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "ruby-pstore-3.4.9-r1.apk",
+      "size": 7595,
+      "sha256": "c743c829cb988a1d6487a0685c7b6cbbaa09d1100daa73748f2c4dee4b9debe7",
+      "package": "ruby-pstore",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-pstore-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "ruby-psych-3.4.9-r1.apk",
+      "size": 35849,
+      "sha256": "723a943f3996d0c1b32f6549b9baebc53302904d1a650f451db7523ac6803b9d",
+      "package": "ruby-psych",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-psych-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "ruby-stringio-3.4.9-r1.apk",
+      "size": 13678,
+      "sha256": "346f66535fcd8015852f15e175ccf7702e04cce2990facda4a9dd746b85a0fa2",
+      "package": "ruby-stringio",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-stringio-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "ruby-yaml-3.4.9-r1.apk",
+      "size": 5365,
+      "sha256": "f1eb38df11feb547d6ebc7e6c2523761721c9246fc454071f20ee73237155cf4",
+      "package": "ruby-yaml",
+      "version": "3.4.9-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ruby-yaml-3.4.9-r1.apk"
+      }
+    },
+    {
+      "name": "sing-box-1.12.25-r1-aarch64_generic.apk",
+      "size": 14856934,
+      "sha256": "fecf5c6196944350132783aaf52b15f2fe49642a1e955638b05176cdc939ce96",
+      "package": "sing-box",
+      "version": "1.12.25-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699648597,
+        "head_sha": "e07074203c487300914885161f55c9bc0aa52417",
+        "artifact": "f50-homeproxy",
+        "member": "sing-box-1.12.25-r1-aarch64_generic.apk"
+      }
+    },
+    {
+      "name": "tailscale-1.98.3_p1-r1-aarch64_generic.apk",
+      "size": 9908432,
+      "sha256": "42f02950b940dcb1a6f0c7b5179d89823074782deaa6ad05cf904ab776b63ed0",
+      "package": "tailscale",
+      "version": "1.98.3_p1-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36697469152,
+        "head_sha": "619014955e93de4f73cc5b4d489a0ebdd39301fa",
+        "artifact": "f50-mt-plugins",
+        "member": "tailscale-1.98.3_p1-r1-aarch64_generic.apk"
+      }
+    },
+    {
+      "name": "tcpdump-4.99.6-r1.apk",
+      "size": 365914,
+      "sha256": "daa8244d0d494600f4d6ab2ecac55de930c3718469024bc3805ee8c8c18a258d",
+      "package": "tcpdump",
+      "version": "4.99.6-r1",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/tcpdump-4.99.6-r1.apk"
+      }
+    },
+    {
+      "name": "ttyd-1.7.7-r1.apk",
+      "size": 412367,
+      "sha256": "f27202f5fbcbfe7e0ebea467a232b2fb6875ffd36a841f0d1393f1e38da12690",
+      "package": "ttyd",
+      "version": "1.7.7-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/ttyd-1.7.7-r1.apk"
+      }
+    },
+    {
+      "name": "ucode-mod-lua-1.apk",
+      "size": 9578,
+      "sha256": "e7ff216adfbccc340d3809698f01f5c115bd9bb062fd159945b2b9383de0c269",
+      "package": "ucode-mod-lua",
+      "version": "1",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/ucode-mod-lua-1.apk"
+      }
+    },
+    {
+      "name": "unzip-6.0-r9.apk",
+      "size": 116249,
+      "sha256": "3806d65e7752b9a48057da762cb9ea3e8d44bd6ad94a8351235827763ec409a2",
+      "package": "unzip",
+      "version": "6.0-r9",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/unzip-6.0-r9.apk"
+      }
+    },
+    {
+      "name": "v2ray-geoip-202607171233-r1.apk",
+      "size": 4434303,
+      "sha256": "4fba8d3638acfa190e2ee992d6be9178dd166dc5cef56e3ae80f9a9cdcf67037",
+      "package": "v2ray-geoip",
+      "version": "202607171233-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/v2ray-geoip-202607171233-r1.apk"
+      }
+    },
+    {
+      "name": "v2ray-geosite-20260726062913-r1.apk",
+      "size": 661861,
+      "sha256": "dc129f5f7e210734f0f2a58a68faa3ec219808d3c4d6b6e9eb8837f60cf0fbcb",
+      "package": "v2ray-geosite",
+      "version": "20260726062913-r1",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/v2ray-geosite-20260726062913-r1.apk"
+      }
+    },
+    {
+      "name": "vlmcsd-2020.03.30_p1-r8-aarch64_generic.apk",
+      "size": 86812,
+      "sha256": "bb41c68c679a78c26ad8fb8be1643546e1f785bfc60bea3d2f27d98f1f5579d2",
+      "package": "vlmcsd",
+      "version": "2020.03.30_p1-r8",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36696731699,
+        "head_sha": "cb46d592af7fb5bbeb0469091e02a98f4cf1a542",
+        "artifact": "f50-mt-luci",
+        "member": "vlmcsd-2020.03.30_p1-r8-aarch64_generic.apk"
+      }
+    },
+    {
+      "name": "zerotier-1.16.0_p2-r1-aarch64_generic.apk",
+      "size": 467804,
+      "sha256": "33a7d2eac59999bcf5ba2169f3e4b8e404677f03733102bcc032cd73f7ed10cc",
+      "package": "zerotier",
+      "version": "1.16.0_p2-r1",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36689368604,
+        "head_sha": "2db8341640972e284d4594f901182674ed903b32",
+        "artifact": "f50-zerotier-ui",
+        "member": "backend/zerotier-1.16.0_p2-r1-aarch64_generic.apk"
+      }
+    }
+  ],
+  "keys": [
+    {
+      "name": "f50-3cb0f3fcb465257d.pem",
+      "size": 178,
+      "sha256": "3cb0f3fcb465257d80763d45349d2279b5dc1376e1894f2137041e00e57a8112",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36676085494,
+        "head_sha": "87104e669c8f515efa02a5b119b948d652be1023",
+        "artifact": "f50-networking-packages",
+        "member": "keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "f50-2fa42b7865a66c35.pem",
+      "size": 178,
+      "sha256": "2fa42b7865a66c350ea2432152650f2bc692e85a6d8caf51adfcc308899a6215",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36689368604,
+        "head_sha": "2db8341640972e284d4594f901182674ed903b32",
+        "artifact": "f50-zerotier-ui",
+        "member": "backend/keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "f50-df707df2d8b97a4d.pem",
+      "size": 178,
+      "sha256": "df707df2d8b97a4dbefd716714044313adf322ba47e77a46a7963b84d8662734",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36689368604,
+        "head_sha": "2db8341640972e284d4594f901182674ed903b32",
+        "artifact": "f50-zerotier-ui",
+        "member": "ui/keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "f50-25d88f1d6983fc55.pem",
+      "size": 178,
+      "sha256": "25d88f1d6983fc55754242edcc00ee8077b804574be237d3d6b7d820af185090",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36690559052,
+        "head_sha": "240381b02ea1f9783961ed80b5a9ccf74d1342bd",
+        "artifact": "f50-theme-aurora",
+        "member": "f50-aurora.pem"
+      }
+    },
+    {
+      "name": "f50-8943c9f4e8bb5c22.pem",
+      "size": 178,
+      "sha256": "8943c9f4e8bb5c227e8ffc83584978baa64030b63e044772ad97b6ffde0100cf",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36695592838,
+        "head_sha": "8a303ad2b68238f442dcc875923d9a3bc380d99a",
+        "artifact": "f50-aurora-config",
+        "member": "f50-aurora.pem"
+      }
+    },
+    {
+      "name": "f50-6461bbd7742e188c.pem",
+      "size": 178,
+      "sha256": "6461bbd7742e188cc4ccffc52347b5ba20a43e17f7bb0e1fca0f508dd89da114",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36695592838,
+        "head_sha": "8a303ad2b68238f442dcc875923d9a3bc380d99a",
+        "artifact": "f50-aurora-config-zh-cn",
+        "member": "f50-aurora.pem"
+      }
+    },
+    {
+      "name": "f50-ae67403b6e1f0864.pem",
+      "size": 178,
+      "sha256": "ae67403b6e1f08645affeb377c0aa6e87d9e88cfc94cf41f4386a4af555fd7d8",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36696731699,
+        "head_sha": "cb46d592af7fb5bbeb0469091e02a98f4cf1a542",
+        "artifact": "f50-mt-luci",
+        "member": "keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "f50-f0849d64a61f690f.pem",
+      "size": 178,
+      "sha256": "f0849d64a61f690f40028ba5a07710c3088e1cb79dccc0ad36756f0b0eab87c5",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36697469152,
+        "head_sha": "619014955e93de4f73cc5b4d489a0ebdd39301fa",
+        "artifact": "f50-mt-plugins",
+        "member": "keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "f50-d4f9e3a9b35b7ca9.pem",
+      "size": 178,
+      "sha256": "d4f9e3a9b35b7ca924415a3dc168960ac3a9a046e72ee0805f895d5d2941b66c",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36697568408,
+        "head_sha": "6d85c7d02f439f06724dd5051f05cb53ce199974",
+        "artifact": "f50-openclash",
+        "member": "keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "f50-98fd32f771fff47f.pem",
+      "size": 178,
+      "sha256": "98fd32f771fff47f5dca1ad39d2b941d085eeb91ed9d170551dfa35ebea2a401",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699110463,
+        "head_sha": "07fbcc692d1440110cd8e5d3deb49fe9b5b4b0de",
+        "artifact": "f50-vpn-menu",
+        "member": "keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "f50-2b1890c32d322a6b.pem",
+      "size": 178,
+      "sha256": "2b1890c32d322a6b0314cadfa857dbc8c24c51c0f3a8ce9f2021b25214562325",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699114670,
+        "head_sha": "07fbcc692d1440110cd8e5d3deb49fe9b5b4b0de",
+        "artifact": "f50-easytier",
+        "member": "keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "f50-37790d29aa0ef45f.pem",
+      "size": 178,
+      "sha256": "37790d29aa0ef45f8910852d3708a145cd748869f35ca7fc86b9f4dca3e67680",
+      "source": {
+        "repository": "yjy116/f50-daede-kernel",
+        "run_id": 36699648597,
+        "head_sha": "e07074203c487300914885161f55c9bc0aa52417",
+        "artifact": "f50-homeproxy",
+        "member": "keys/f50-packaging.pem"
+      }
+    },
+    {
+      "name": "openwrt-25.12.pem",
+      "size": 178,
+      "sha256": "27d61d827d64ccf2f46dce5f52aec6279404d4a00686dafb22f52f3b4ee675f8",
+      "base_member": "etc/apk/keys/openwrt-25.12.pem"
+    }
+  ],
+  "remove_packages": [],
+  "required_packages": [
+    "daed",
+    "luci-app-daede",
+    "zerotier",
+    "luci-app-zerotier",
+    "luci-theme-aurora",
+    "luci-app-aurora-config"
+  ],
+  "excluded_packages": [
+    "adguardhome",
+    "luci-app-adguardhome",
+    "luci-i18n-adguardhome-zh-cn",
+    "luci-app-sqm",
+    "sqm-scripts",
+    "luci-app-fancontrol",
+    "luci-app-mini-diskmanager",
+    "luci-app-partexp",
+    "luci-app-samba4",
+    "luci-app-wolultra",
+    "luci-app-gecoosac"
+  ],
+  "profile": "final-device-verified-package-versions",
+  "indexes": [
+    {
+      "name": "base-packages.adb",
+      "size": 110259,
+      "sha256": "227cee9402c0e6a842b418a02df5538982a98fffad47428404cb994b7232dbba",
+      "feed": "base",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/base/packages.adb"
+      }
+    },
+    {
+      "name": "luci-packages.adb",
+      "size": 382631,
+      "sha256": "86efa0b3497cb019d82667daa89947249f3bfc7dae246b78d186b16e8667db26",
+      "feed": "luci",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/luci/packages.adb"
+      }
+    },
+    {
+      "name": "packages-packages.adb",
+      "size": 745871,
+      "sha256": "19aeea63ab1ba94a6f40424f77e5f8dff80870e6a61b5d4483b605cb8989be1b",
+      "feed": "packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_generic/packages/packages.adb"
+      }
+    },
+    {
+      "name": "targets-packages-packages.adb",
+      "size": 13924,
+      "sha256": "3980230b208fbb82ba0ea139d97f16b7ef3deb378902b2c70372f1456280b283",
+      "feed": "targets-packages",
+      "source": {
+        "url": "https://downloads.openwrt.org/releases/25.12.5/targets/armsr/armv8/packages/packages.adb"
+      }
+    }
+  ],
+  "expected_inventory": {
+    "apk-mbedtls": "3.0.5-r3",
+    "base-files": "1711~f5dae5ece4",
+    "bash": "5.3-r5",
+    "blkid": "2.41.5-r1",
+    "busybox": "1.37.0-r6",
+    "ca-bundle": "20260601-r1",
+    "cgi-io": "2026.06.28~7314451c-r1",
+    "coremark": "2025.05.01~1f483d5b-r1",
+    "coreutils": "9.9-r2",
+    "coreutils-stty": "9.9-r2",
+    "curl": "8.22.0-r1",
+    "daed": "2026.09.24_p1-r2",
+    "ddns-scripts": "2.8.4-r8",
+    "ddns-scripts-aliyun": "2.8.4-r8",
+    "ddns-scripts-cloudflare": "2.8.4-r8",
+    "ddns-scripts-dnspod-v3": "2.8.4-r8",
+    "ddns-scripts-services": "2.8.4-r8",
+    "dnsmasq-full": "2.93-r1",
+    "dropbear": "2025.89-r3",
+    "e2fsprogs": "1.47.3-r1",
+    "easytier": "2.6.4-r1",
+    "firewall4": "2025.03.17~b6e51575-r2",
+    "fstools": "2026.05.23~16718b6e-r1",
+    "fwtool": "2025.10.03~04cd252e-r1",
+    "getrandom": "2025.10.30~6f78fa49-r1",
+    "gpiod-tools": "2.1.3-r1",
+    "grub2-efi-arm": "2.12-r1",
+    "hostapd-common": "2025.08.26~ca266cc2-r2",
+    "htop": "3.5.1-r1",
+    "i2c-tools": "4.4-r2",
+    "ip-full": "6.18.0-r2",
+    "iperf3": "3.20-r1",
+    "iw": "6.17-r1",
+    "iwinfo": "2026.01.14~f5dd57a8-r1",
+    "jansson4": "2.14.1-r1",
+    "jshn": "2026.06.19~7dd12784-r1",
+    "jsonfilter": "2026.03.16~b9034210-r1",
+    "kernel": "6.12.94~ba5ca7f3e73618aeece9cc1c14e512c2-r1",
+    "kmod-crypto-crc32c": "6.12.94-r1",
+    "kmod-crypto-hash": "6.12.94-r1",
+    "kmod-fs-vfat": "6.12.94-r1",
+    "kmod-lib-crc-ccitt": "6.12.94-r1",
+    "kmod-lib-crc32c": "6.12.94-r1",
+    "kmod-nf-conntrack": "6.12.94-r1",
+    "kmod-nf-conntrack6": "6.12.94-r1",
+    "kmod-nf-flow": "6.12.94-r1",
+    "kmod-nf-log": "6.12.94-r1",
+    "kmod-nf-log6": "6.12.94-r1",
+    "kmod-nf-nat": "6.12.94-r1",
+    "kmod-nf-reject": "6.12.94-r1",
+    "kmod-nf-reject6": "6.12.94-r1",
+    "kmod-nfnetlink": "6.12.94-r1",
+    "kmod-nft-core": "6.12.94-r1",
+    "kmod-nft-fib": "6.12.94-r1",
+    "kmod-nft-nat": "6.12.94-r1",
+    "kmod-nft-offload": "6.12.94-r1",
+    "kmod-nls-base": "6.12.94-r1",
+    "kmod-nls-cp437": "6.12.94-r1",
+    "kmod-nls-iso8859-1": "6.12.94-r1",
+    "kmod-nls-utf8": "6.12.94-r1",
+    "kmod-ppp": "6.12.94-r1",
+    "kmod-pppoe": "6.12.94-r1",
+    "kmod-pppox": "6.12.94-r1",
+    "kmod-slhc": "6.12.94-r1",
+    "libatomic1": "14.3.0-r5",
+    "libblkid1": "2.41.5-r1",
+    "libblobmsg-json20260213": "2026.06.19~7dd12784-r1",
+    "libbpf1": "1.6.2-r1",
+    "libc": "1.2.5-r5",
+    "libcap": "2.69-r1",
+    "libcap-ng": "0.8.4-r2",
+    "libcomerr0": "1.47.3-r1",
+    "libcurl4": "8.22.0-r1",
+    "libe2p2": "1.47.3-r1",
+    "libelf1": "0.192-r1",
+    "libext2fs2": "1.47.3-r1",
+    "libf2fs6": "1.16.0-r4",
+    "libgcc1": "14.3.0-r5",
+    "libgmp10": "6.3.0-r2",
+    "libgpiod": "2.1.3-r1",
+    "libi2c": "4.4-r2",
+    "libiperf3": "3.20-r1",
+    "libiwinfo-data": "2026.01.14~f5dd57a8-r1",
+    "libiwinfo20230701": "2026.01.14~f5dd57a8-r1",
+    "libjson-c5": "0.18-r1",
+    "libjson-script20260213": "2026.06.19~7dd12784-r1",
+    "liblua5.1.5": "5.1.5-r11",
+    "liblucihttp-lua": "2023.03.15~9b5b683f-r1",
+    "liblucihttp-ucode": "2023.03.15~9b5b683f-r1",
+    "liblucihttp0": "2023.03.15~9b5b683f-r1",
+    "libmbedtls21": "3.6.6-r2",
+    "libminiupnpc": "2.2.8-r1",
+    "libmnl0": "1.0.5-r1",
+    "libnatpmp1": "20230423-r2",
+    "libncurses6": "6.4-r3",
+    "libnetfilter-conntrack3": "1.1.0_p1-r1",
+    "libnettle8": "3.10.2-r1",
+    "libnfnetlink0": "1.0.2-r1",
+    "libnftnl11": "1.3.1-r1",
+    "libnghttp2-14": "1.70.0-r1",
+    "libnl-tiny1": "2025.12.02~40493a65-r1",
+    "libopenssl-conf": "3.5.8-r2",
+    "libopenssl3": "3.5.8-r2",
+    "libpcap1": "1.10.6-r1",
+    "libpthread": "1.2.5-r5",
+    "libreadline8": "8.3-r1",
+    "librt": "1.2.5-r5",
+    "libruby3.4": "3.4.9-r1",
+    "libss2": "1.47.3-r1",
+    "libstdcpp6": "14.3.0-r5",
+    "libubox20260213": "2026.06.19~7dd12784-r1",
+    "libubus-lua": "2026.06.28~24864e78-r2",
+    "libubus20251202": "2026.06.28~24864e78-r2",
+    "libuci20250120": "2025.12.02~66127cd7-r1",
+    "libuclient20201210": "2026.06.07~daad21fa-r1",
+    "libucode20230711": "2026.01.16~85922056-r1",
+    "libudebug": "2026.01.16~875e1a7a",
+    "libustream-mbedtls20201210": "2026.03.01~99f1c0db-r1",
+    "libuuid1": "2.41.5-r1",
+    "libuv1": "1.48.0-r1",
+    "libwebsockets-full": "4.4.1-r1",
+    "libyaml": "0.2.5-r2",
+    "logd": "2025.10.30~6f78fa49-r1",
+    "lua": "5.1.5-r11",
+    "luci": "26.180.75667~128a781",
+    "luci-app-aurora-config": "1.2.5-r20260920",
+    "luci-app-autoreboot": "26.261.08411_p1-r1",
+    "luci-app-daede": "1.15_p1-r6",
+    "luci-app-ddns": "26.270.72870~a24d1f2",
+    "luci-app-easytier": "2.6.4-r3",
+    "luci-app-firewall": "26.180.75667~128a781",
+    "luci-app-homeproxy": "2026.09.30-r1",
+    "luci-app-iperf3": "0.1_p1-r1",
+    "luci-app-natmap": "26.270.72870~a24d1f2",
+    "luci-app-nlbwmon": "26.270.72870~a24d1f2",
+    "luci-app-openclash": "0.47.167-r1",
+    "luci-app-package-manager": "26.180.75667~128a781",
+    "luci-app-tailscale-community": "26.270.72870~a24d1f2-r1",
+    "luci-app-ttyd": "26.270.72870~a24d1f2",
+    "luci-app-upnp": "26.270.72870~a24d1f2",
+    "luci-app-vlmcsd": "26.261.08411_p1-r1",
+    "luci-app-zerotier": "1.1.0_p2-r1",
+    "luci-base": "26.180.75667~128a781",
+    "luci-compat": "26.270.72870~a24d1f2",
+    "luci-i18n-aurora-config-zh-cn": "26.262.58276~362887a",
+    "luci-i18n-autoreboot-zh-cn": "26.261.08411_p1-r1",
+    "luci-i18n-base-zh-cn": "26.270.72870~a24d1f2",
+    "luci-i18n-ddns-zh-cn": "26.270.72870~a24d1f2",
+    "luci-i18n-easytier-zh-cn": "26.136.03667~39d7eda-r2",
+    "luci-i18n-homeproxy-zh-cn": "2026.09.30-r1",
+    "luci-i18n-iperf3-zh-cn": "0.1_p1-r1",
+    "luci-i18n-natmap-zh-cn": "26.270.72870~a24d1f2",
+    "luci-i18n-nlbwmon-zh-cn": "26.270.72870~a24d1f2",
+    "luci-i18n-tailscale-community-zh-cn": "26.270.72870~a24d1f2-r1",
+    "luci-i18n-ttyd-zh-cn": "26.270.72870~a24d1f2",
+    "luci-i18n-upnp-zh-cn": "26.270.72870~a24d1f2",
+    "luci-i18n-vlmcsd-zh-cn": "26.261.08411_p1-r1",
+    "luci-lib-base": "26.270.72870~a24d1f2",
+    "luci-lib-chartjs": "26.270.72870~a24d1f2",
+    "luci-lib-ip": "26.270.72870~a24d1f2",
+    "luci-lib-jsonc": "26.270.72870~a24d1f2",
+    "luci-lib-nixio": "26.270.72870~a24d1f2",
+    "luci-lib-uqr": "26.180.75667~128a781",
+    "luci-light": "26.180.75667~128a781",
+    "luci-lua-runtime": "26.270.72870~a24d1f2",
+    "luci-mod-admin-full": "26.180.75667~128a781",
+    "luci-mod-network": "26.180.75667~128a781",
+    "luci-mod-status": "26.180.75667~128a781",
+    "luci-mod-system": "26.180.75667~128a781",
+    "luci-proto-ipv6": "26.180.75667~128a781",
+    "luci-proto-ppp": "26.180.75667~128a781",
+    "luci-ssl": "26.180.75667~128a781",
+    "luci-theme-aurora": "1.4.0-r20260920",
+    "luci-theme-bootstrap": "26.180.75667~128a781",
+    "mihomo-openclash": "1.19.31-r1",
+    "miniupnpd-nftables": "2.3.9-r1",
+    "mkf2fs": "1.16.0-r4",
+    "mtd": "27",
+    "nano": "9.2-r1",
+    "natmap": "20260214-r1",
+    "netifd": "2026.02.26~cbb83a18-r1",
+    "nftables-json": "1.1.6-r2",
+    "nlbwmon": "2025.06.02~29236be6-r2",
+    "odhcp6c": "2026.06.20~07d324ee-r1",
+    "odhcpd-ipv6only": "2026.06.29~5d7be43f-r1",
+    "openssh-sftp-server": "10.5_p1-r1",
+    "openssl-util": "3.5.8-r2",
+    "openwrt-keyring": "2025.12.10~f0670054-r1",
+    "ppp": "2.5.2-r3",
+    "ppp-mod-pppoe": "2.5.2-r3",
+    "procd": "2026.03.13~58eb263d-r1",
+    "procd-seccomp": "2026.03.13~58eb263d-r1",
+    "px5g-mbedtls": "11",
+    "resolveip": "2",
+    "rpcd": "2026.06.04~28faf640-r1",
+    "rpcd-mod-file": "2026.06.04~28faf640-r1",
+    "rpcd-mod-iwinfo": "2026.06.04~28faf640-r1",
+    "rpcd-mod-luci": "20240305-r1",
+    "rpcd-mod-rpcsys": "2026.06.04~28faf640-r1",
+    "rpcd-mod-rrdns": "20170710",
+    "rpcd-mod-ucode": "2026.06.04~28faf640-r1",
+    "ruby": "3.4.9-r1",
+    "ruby-bigdecimal": "3.4.9-r1",
+    "ruby-date": "3.4.9-r1",
+    "ruby-digest": "3.4.9-r1",
+    "ruby-enc": "3.4.9-r1",
+    "ruby-pstore": "3.4.9-r1",
+    "ruby-psych": "3.4.9-r1",
+    "ruby-stringio": "3.4.9-r1",
+    "ruby-yaml": "3.4.9-r1",
+    "sing-box": "1.12.25-r1",
+    "tailscale": "1.98.3_p1-r1",
+    "tcpdump": "4.99.6-r1",
+    "terminfo": "6.4-r3",
+    "ttyd": "1.7.7-r1",
+    "ubox": "2025.10.30~6f78fa49-r1",
+    "ubus": "2026.06.28~24864e78-r2",
+    "ubusd": "2026.06.28~24864e78-r2",
+    "uci": "2025.12.02~66127cd7-r1",
+    "uclient-fetch": "2026.06.07~daad21fa-r1",
+    "ucode": "2026.01.16~85922056-r1",
+    "ucode-mod-digest": "2026.01.16~85922056-r2",
+    "ucode-mod-fs": "2026.01.16~85922056-r1",
+    "ucode-mod-html": "1",
+    "ucode-mod-log": "2026.01.16~85922056-r1",
+    "ucode-mod-lua": "1",
+    "ucode-mod-math": "2026.01.16~85922056-r1",
+    "ucode-mod-nl80211": "2026.01.16~85922056-r2",
+    "ucode-mod-rtnl": "2026.01.16~85922056-r2",
+    "ucode-mod-ubus": "2026.01.16~85922056-r1",
+    "ucode-mod-uci": "2026.01.16~85922056-r1",
+    "ucode-mod-uclient": "2026.06.07~daad21fa-r1",
+    "ucode-mod-uloop": "2026.01.16~85922056-r1",
+    "uhttpd": "2026.06.16~7b1bec45-r1",
+    "uhttpd-mod-ubus": "2026.06.16~7b1bec45-r1",
+    "unzip": "6.0-r9",
+    "urandom-seed": "3",
+    "urngd": "2025.10.03~f17e33d9-r1",
+    "usign": "2025.10.03~c4c72b1b-r1",
+    "v2ray-geoip": "202607171233-r1",
+    "v2ray-geosite": "20260726062913-r1",
+    "vlmcsd": "2020.03.30_p1-r8",
+    "wifi-scripts": "1.0-r1",
+    "wireless-regdb": "2026.05.30-r1",
+    "wpad-basic-mbedtls": "2025.08.26~ca266cc2-r2",
+    "zerotier": "1.16.0_p2-r1",
+    "zlib": "1.3.1-r1"
+  },
+  "inventory_evidence": {
+    "kind": "package-names-and-versions-only",
+    "sha256": "d35ad43e66cdd01bb2ddc799802f4690b0c15c397560993507991bbc4591556e",
+    "count": 247,
+    "matches_public_base_plus_locked_packages": true
+  }
+}

@@ -1,0 +1,36 @@
+name: Assemble F50 OpenWrt
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: Image version label; assembly does not publish a release
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  assemble:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Focused acceptance tests
+        run: timeout 60s python3 -B -m unittest discover -s tests
+      - name: Assemble locked public inputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          F50_IMAGE_TAG: ${{ inputs.image_tag }}
+        run: |
+          python3 scripts/assemble.py --tag "$F50_IMAGE_TAG" \
+            --repository "$GITHUB_REPOSITORY" \
+            --output "$RUNNER_TEMP/f50-assembly"
+      - name: Save verified assembly artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: f50-openwrt-assembly
+          path: ${{ runner.temp }}/f50-assembly/
+          if-no-files-found: error
+          retention-days: 30

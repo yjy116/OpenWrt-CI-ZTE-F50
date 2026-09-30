@@ -1,0 +1,26 @@
+{
+  "upstream_commit": "1a69a41ea9d20fadd575e9b082364d61ce5fcf9a",
+  "upstream_release": "v2026.10.08",
+  "kernel_release": "7.2.8-f50-dae1",
+  "files": [
+    {"role": "rootfs", "name": "mu300-openwrt-rootfs.tar.gz", "size": 61644253,
+     "sha256": "1a5b8ad81bab9ae13108d058c7ed136e129f9d54b3eb5a589001a304fb67d4c1",
+     "source": {"url": "https://github.com/dikeckaan/mu300-linux/releases/download/v2026.10.08/mu300-openwrt-rootfs.tar.gz"}},
+    {"role": "reference-kernel", "name": "mu300-kernel.tar.gz", "size": 26944962,
+     "sha256": "e7de479fb54624473fa26445f400ffd50631d47be8ae622a5e33aab685e8a686",
+     "source": {"url": "https://github.com/dikeckaan/mu300-linux/releases/download/v2026.10.08/mu300-kernel.tar.gz"}},
+    {"role": "updater", "name": "mu300-update", "size": 38084,
+     "sha256": "99e32cb6fb630437a192c832a0b38d61f532c72b2ec19301bfed081cebc56f45",
+     "source": {"url": "https://github.com/dikeckaan/mu300-linux/releases/download/v2026.10.08/mu300-update"}},
+    {"role": "kernel", "name": "mu300-kernel-7.2.8-btf.tar.gz", "size": 12175244,
+     "sha256": "be4021732202f8a3a3e916e51cdc4650c224e2a6aa3cba02c5db551e913f57f1",
+     "source": {"repository": "yjy116/f50-daede-kernel", "run_id": 36672813155,
+       "head_sha": "10748c1bb03150748726c4592ebfa1fb30166cb2", "artifact": "f50-kernel-7.2.8",
+       "member": "mu300-kernel-7.2.8-btf.tar.gz"}},
+    {"role": "kernel-validation", "name": "kernel-validation.json", "size": 18004,
+     "sha256": "ba58a7af264857e5254165ef4de240bf15dcf3b6a709f8f916a097fc71dbbf05",
+     "source": {"repository": "yjy116/f50-daede-kernel", "run_id": 36672813155,
+       "head_sha": "10748c1bb03150748726c4592ebfa1fb30166cb2", "artifact": "f50-kernel-7.2.8",
+       "member": "kernel-validation.json"}}
+  ]
+}

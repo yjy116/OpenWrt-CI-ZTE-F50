@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+/out/
+/cache/
+/local-inputs/
+*.apk
+*.ipk
+*.tar.gz
+*.pem
+*.key
+*.img
+*.bin
