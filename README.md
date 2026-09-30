@@ -1,11 +1,17 @@
 # F50 OpenWrt 组装 CI
 
-本项目组装用于 ZTE F50 的通用 OpenWrt 25.12.5 文件系统和已验证的
+本项目组装用于 ZTE F50 的通用 OpenWrt 25.12.5 文件系统和已通过构建及 BTF/eBPF 检查的
 7.2.8-f50-dae1 内核。它复用公开上游 rootfs 与成功内核构建产物，**不是重新编译
 整套 OpenWrt**。当前锁定 96 个输入 APK，组装后的 247 个包名和版本已与设备最终
 安装清单逐项比对一致；[ARM64 云组装与产物审计已通过](https://github.com/yjy116/OpenWrt-CI-ZTE-F50/actions/runs/36703988419)。
 [预览固件 v2026.09.30-f50.1](https://github.com/yjy116/OpenWrt-CI-ZTE-F50/releases/tag/v2026.09.30-f50.1)
 已发布；完整新镜像尚未刷入设备进行启动验证。
+
+**实际兼容性记录（2026-09-30）：** 当前预览采用的 `7.2.8-f50-dae1` 内核
+已在现有 F50 系统上观察到 daed 的 UDP 发送路径发生内核 Oops，随后 panic 并自动重启。
+排查期间暂保持 daede 关闭，以优先维持网络稳定。BTF/eBPF 检查通过不等于
+daede 的运行兼容性已经验证。另库的 [WLAN RX checksum 候选修复（27dbbcc）](https://github.com/yjy116/f50-daede-kernel/commit/27dbbcc)
+针对独立的校验和问题，尚未证明能够修复上述 panic。
 
 设备使用 `mu300-update`/MU300 专用安装器，而不是 OpenWrt armsr 整盘 sysupgrade。
 发布协议固定为 `mu300-openwrt-rootfs.tar.gz`、`mu300-kernel-7.2.tar.gz`、
@@ -15,7 +21,8 @@
 固件均不得成为构建输入或发布内容。上游升级器在设备上从旧系统复制专有文件和
 配置；本项目的持久目录清单用于补齐新增插件状态，绝不从设备读取后上传。
 
-包含范围：实际已验证的通用插件、daede、ZeroTier p2、Aurora。AdGuard Home、
+包含范围：已完成安装和界面核验的通用插件、daede、ZeroTier p2、Aurora；
+这不代表所有插件均已通过完整运行验证。AdGuard Home、
 SQM、MT3600BE 风扇/存储/WoL/AC/打印硬件组件排除。HomeProxy 使用已固定的
 1.12.25 sing-box 适配构建；不能用删除依赖或伪造 kmod 包掩盖未验证的内核缺口。
 
