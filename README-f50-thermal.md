@@ -7,7 +7,8 @@
 
 LuCI 概览会自动发现 status include，并按现有概览刷新周期调用它。
 使用原生表格，适配当前 Aurora 主题；不增加守护进程、执行命令或修改配置。
-固件构建需要将 `files/` 的这两个文件按目录复制到 rootfs，主构建集成由独立步骤完成。
+固件构建只复制这两个明确路径，并核验最终 rootfs 内文件与源码的 SHA256、
+0644 权限及 root 所有权；组件不增加 APK，包数量保持 247。
 
 每轮通过已有 LuCI `fs.list()` / `fs.read()`（rpcd `file.list/read`）重新枚举
 `/sys/class/thermal`，接受实际 sysfs 符号链接，读取 `type` 后精确匹配：
@@ -34,7 +35,9 @@ ACL 更新后需重载 rpcd 并重新建立 LuCI 登录会话，再验证真实�
 测试命令：`node --test tests/test_thermal.js`。
 测试以内存文件读取适配器加载实际 LuCI 模块逻辑，覆盖乱序、符号链接、缺失、重复、
 枚举失败、类型/温度读取失败、错误后恢复、坏数值、零/负值以及跨轮不复用旧值。
-这验证逻辑与权限声明，不是浏览器、rpcd ACL 或实机测温验证；部署后须分别核验。
+这些测试验证逻辑与权限声明。组件还已在现有 F50 上单独部署：浏览器显示六项真实
+读数、无需重新加载即可自动刷新，没有组件错误；未修改网络或无线配置。
+完整新 rootfs 的刷机启动尚未验证，组件实测不能替代整套镜像验收。
 
 核查依据：当前公开基础 rootfs 的 `fs.js`、`view/status/index.js` 和
 `usr/share/rpcd/acl.d/luci-mod-status-index.json`；设备 rpcd 版本对应

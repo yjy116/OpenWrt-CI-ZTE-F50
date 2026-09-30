@@ -3,7 +3,8 @@
 本项目组装用于 ZTE F50 的通用 OpenWrt 25.12.5 文件系统和已验证的
 7.2.8-f50-dae1 内核。它复用公开上游 rootfs 与成功内核构建产物，**不是重新编译
 整套 OpenWrt**。当前锁定 96 个输入 APK，组装后的 247 个包名和版本已与设备最终
-安装清单逐项比对一致；完整云组装与新镜像启动验证尚未执行。
+安装清单逐项比对一致；[ARM64 云组装与产物审计已通过](https://github.com/yjy116/OpenWrt-CI-ZTE-F50/actions/runs/36703988419)。
+完整新镜像尚未刷入设备进行启动验证。
 
 设备使用 `mu300-update`/MU300 专用安装器，而不是 OpenWrt armsr 整盘 sysupgrade。
 发布协议固定为 `mu300-openwrt-rootfs.tar.gz`、`mu300-kernel-7.2.tar.gz`、
@@ -99,7 +100,8 @@ python3 scripts/assemble.py --tag vYYYY.MM.DD-f50.1 \
 
 组装断言 daed、ZeroTier、OpenClash、EasyTier、HomeProxy、sing-box、自动重启及
 vlmcsd 的公共默认配置未启用代理或计划任务；输出配置断言和启动链接清单。
-Tailscale 可以启动为未登录状态，这不等同于已建立 VPN。升级会保留设备既有配置。
+Tailscale 可以启动为未登录状态，这不等同于已建立 VPN。升级器先复制现有配置，
+首次启动时包自身仍可能迁移配置，具体范围见下文。
 
 输出重新审计路径穿越、重复成员、私有固件、SSH/VPN/EasyTier 身份、daed 运行数据库、账户密码哈希和非空
 配置凭据；LuCI 的 `/etc/passwd` 文件引用及 rpcd 的 `$p$root` 账户引用不会被误当
@@ -118,6 +120,16 @@ OpenClash 只迁移六个用户数据子目录，保留新包内核心与数据�
 Tailscale 的 `/etc/tailscale` 身份目录只在设备端迁移。账户 marker 配合原版
 merge_accounts 保留旧密码；镜像本身不包含用户密码或密码哈希。
 
+保留配置后，首次启动仍执行原生 `uci-defaults` 和迁移脚本。HomeProxy 会迁移旧
+DNS/路由字段并重建自身防火墙 include；OpenClash 会补齐缺失认证、调整部分全局
+参数并重载 Web 服务；EasyTier 会建立 init 启用链接，但不改变 UCI enabled。
+因此不承诺升级后 `etc/config` 逐字节不变。已审脚本未见无条件重置原有 enabled
+或身份的行为，完整新 rootfs 的升级效果仍待实机验证。
+
+构建输入归档与首版固件使用预发布标记。在完整镜像实机验收前，不提供稳定版
+`latest`；首次使用必须显式指定已审核的固件 tag。没有稳定版时，默认 latest
+查询会明确失败，不会自动改用构建输入归档或其它版本。
+
 未来完成发布后，现有上游升级器可通过环境变量选择本仓库的已审计 release：
 
 ```sh
@@ -127,5 +139,8 @@ MU300_REPO=OWNER/REPOSITORY MU300_RELEASE=vYYYY.MM.DD-f50.1 mu300-update apply o
 此处只是格式说明，本阶段没有执行设备升级。普通 LuCI sysupgrade 和 armsr 整盘
 镜像不适用。不得把此 rootfs 直接写入整盘或 Android 原始分区。
 
-现状：聚焦测试、真实基础输入审计与最终 247 包清单核对已完成；尚未执行完整云
-组装、发布或新镜像实机升级。已有 F50 总台账第 23 项跟踪，不另建重复台账。
+验证：17 项 Python 测试、11 项温度组件测试、Shell 语法及 actionlint 通过。
+云产物的内外包清单均为精确锁定的 247 包，31 个模块与内核 bundle 字节一致，
+两份温度文件与源码 SHA、权限一致，Vlmcsd 三项默认关闭，首次启动脚本完整保留，
+未发现构建阶段生成的设备身份或私人配置。温度组件已在现有 F50 单独部署并验证
+六个测温点和自动刷新；完整新 rootfs 尚未实机升级。已有总台账第 23 项跟踪。
